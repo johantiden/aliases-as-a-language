@@ -1,14 +1,18 @@
 #/usr/bin/env bash
 
+
+local thisDirectory=$(dirname $0)
+source $thisDirectory/impl.sh
+
 # Verbs
 #########################
 alias b='git checkout '
 alias e='echo '
 alias m='merge '
-alias o='xdg-open '
+alias o='__impl_open '
 alias p='ep'
 alias y='clipS'
-alias v='__looklet_maven_version '
+alias v='__impl_set_version '
 alias z='subl '
 alias Z='sudo subl '
 
@@ -21,7 +25,12 @@ alias d1f='cd `ed1f`'
 alias d1F='cd `ed1F`'
 alias f='1f'
 alias 1f='e1f'
+alias 1ef='e1ef'
 alias 1F='e1F'
+alias 1eF='e1eF'
+alias 1t='e1t'
+alias t='e1t'
+alias et='e1et'
 
 # Special
 #########################
@@ -37,24 +46,34 @@ alias b1b='b `e1b`'								# branch one branch
 
 alias cp='c $(p)'								# commit pasting (as message)
 
-alias e1b='__johan_choose_branch'				# echo branch
+alias e1b='__impl_choose_branch'				# echo branch
 alias e.b='git branch --show-current '  		# echo this branch
-alias e.c='git log -n1 --pretty=format:"%s"'	# echo this commit message
+alias e.c='git --no-pager log -n1 --pretty=format:"%s"'	# echo this commit message
 
 
 # echo one file from ~
-alias e1f='find ~ -print | grep -v ".git" | grep -v ".icons" | grep -v ".cache"| grep -v ".fzf" | grep -v ".m2" | grep -v ".PlayOnLinux" | grep -v ".config/google-chrome" | grep -v ".gcloud"  | grep -v ".config/libreoffice" | fzf'
+alias e1f='__impl_choose_one_file_from_home'
+alias ef='e1f'
+
+# echo one exact file from ~
+alias e1ef='__impl_choose_one_file_from_home_exact'
 
 # echo one file from /
-alias e1F='sudo find / -print | grep -v ".git" | grep -v ".icons" | grep -v ".cache"| grep -v ".fzf" | grep -v ".m2" | grep -v ".PlayOnLinux" | grep -v ".config/google-chrome" | grep -v ".gcloud"  | grep -v ".config/libreoffice" | fzf'
+alias e1F='__impl_choose_one_file_from_root'
+
+# echo one exact file from /
+alias e1eF='__impl_choose_one_file_from_root_exact'
 
 alias e1d='find ~ -type d | 1'					# echo dir from ~
 alias e1D='sudo find / -type d | 1'				# echo dir from /
+alias e1t='__impl_t'							# echo file and row
+alias e1et='__impl_t_exact'						# echo file and row, exact match
+
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
 alias ed1F='dirname `e1F`'						# echo dir of one file from /
 alias e.d='pwd'
 alias ep='clipL'								# echo pasting
-alias e.v='getMavenProjectVersion '     		# echo this version
+alias e.v='__impl_get_version ' 	    		# echo this version
 
 ### Go
 alias g1d='cd `e1d`' 		#go one dir
@@ -71,6 +90,8 @@ alias o1d='o `e1d`' 		#open one dir from ~
 alias o.d='o `pwd`'			#open this dir
 alias oD='o `e1D`'			#open one dir from /
 alias o1f='o `e1f`'			#open one file file from ~
+alias o1F='o `e1F`'			#open one file file from /
+alias of='o1f'				#open one file file from ~
 alias op='o $(p)'			#open pasting
 
 
