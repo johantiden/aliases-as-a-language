@@ -1,6 +1,7 @@
 #/usr/bin/env bash
 
-
+# Verbs
+#########################
 alias b='git checkout '
 alias e='echo '
 alias m='merge '
@@ -11,7 +12,8 @@ alias v='__looklet_maven_version '
 alias z='subl '
 alias Z='sudo subl '
 
-
+# Nouns
+#########################
 alias 1b='g1b'
 alias 1d='cd `e1d`'
 alias 1D='cd `e1D`'
@@ -21,22 +23,23 @@ alias f='1f'
 alias 1f='e1f'
 alias 1F='e1F'
 
+# Special
+#########################
+alias 1='fzf '
+alias x1='dmenu '
 
 
-# branch develop
-alias bd='b develop'
-# branch master
-alias bm='b master'
-# branch pasting
-alias bp='b $(p)'
-# branch one branch
-alias b1b='b `e1b`'
+# Sentences
+#########################
+alias bd='b develop'					# branch develop
+alias bm='b master'						# branch master
+alias bp='b $(p)'						# branch pasting
+alias b1b='b `e1b`'						# branch one branch
 
-# commit pasting (as message)
-alias cp='c $(p)'
+alias cp='c $(p)'						# commit pasting (as message)
 
-# echo branch
-alias e1b='__johan_choose_branch'
+
+alias e1b='__johan_choose_branch'		# echo branch
 # echo this branch
 alias e.b='git branch --show-current '
 # echo this commit message
@@ -75,7 +78,6 @@ alias oD='o `D`'
 alias of='o `f`'
 # open pasting
 alias op='o $(p)'
-
 
 
 

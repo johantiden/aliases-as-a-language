@@ -10,15 +10,8 @@ HELP WANTED!
 Clone this repository and source the `aliases-as-a-language` file into you .bashrc or similar.
 
 
-
-##########################
 # Language
-##########################
-
-
-##########################
-# Verbs:
-##########################
+## Verbs:
 * b		(go)branch
 * c     commit
 * e		echo
@@ -33,9 +26,7 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
 * .n    git new
 
 
-##########################
-# Nouns
-#########################
+## Nouns
 * 1b	one branch
 * .b	this branch
 
@@ -56,37 +47,37 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
 * .v    this version
 * .c    this commit (message)
 
-# Special
-#########################
+## Special
 * 1     one
-alias 1='fzf '
-alias x1='dmenu '
-
+	* e.g. e1f "echo one file"
 * .     this
-	* eg. y.d "yank this dir"
+	* e.g. y.d "yank this dir"
 
-* Adjectives
-#########################
+## Adjectives
 * j 	jira as an adjective
 	* oj.v     "open jira, this-version"
 	* njp      "new branch, jira-pasting"
+* g     git as an adjective
+	* og1v 	   "open a git version" - open here, to mean open github. git can usually be derived from context so it may now be needed. "e.v" - echo this version can be safely assumed to be a git version, so it should behave the same as "eg.v"
 
 
 
+# Grammar
+* Verb alone expects an argument eg "e hej"
 
-#########################
-# sentences
-#########################
-*Grammar:
-*Verb alone expects an argument eg "e hej"
-
-*Behavior from noun alone depends on context. 
+* Behavior from noun alone depends on context. 
 	*`f` will will echo the file. 
-	*`.d` will change branch to develop.
+	*`1d` will cd to a directory.
 
-*VERB-NOUN sentence should give the noun as an argument to the verb. 
-	*`of` open file
-*VERB-ADJECTIVE-NOUN should act as VERB-NOUN, the ADJECTIVE should modify the NOUN
+* Some verbs are contextual.
+	* e.g. `r`. `r.b` remove this branch
+
+## Building sentences
+*VERB-NOUN sentence should give the noun as an argument to the verb. Note that the verb always comes before the noun.
+	* e.g. `of` open file
+
+*VERB-ADJECTIVE-NOUN should act as VERB-NOUN, the ADJECTIVE give some context to the sentence.
+	* e.g. `og1f` open one git file - This could be interpreted as to open the chosen file on github.
 
 *NOTE: SOME VERBS ARE ALSO NOUNS! 
 	*e.g. `cp` will commit with the clipboard contents as message. 
