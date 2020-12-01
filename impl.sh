@@ -9,7 +9,7 @@
 
 
 function __impl_merge() {
-	git merge --no-edit 
+	git merge --no-edit "${@}"
 }
 
 
@@ -47,37 +47,37 @@ function __johan_b {
 }
 
 # TODO: Depends on t_preview
-function __impl_t() {
-    OFFSET="${1}"
-    if [[ -z "${OFFSET}" ]] ; then
-        OFFSET = 0
-    fi
+function __impl_t_fuzzy() {
+	FILE_AND_LINE=$(ag --nobreak --noheading . ~ | fzf --preview='t_preview {}')
+	if [[ -n "${FILE_AND_LINE}" ]]; then
+	    FILE=$(sed 's/:.*//g' <<< $FILE_AND_LINE)
+	    let LINE=$(sed -e 's/.*:\(.*\):.*/\1/' <<< $FILE_AND_LINE)
 
-    FILE_AND_LINE=$(ag --nobreak --noheading . | fzf --preview='t_preview {}')
-    FILE=$(sed 's/:.*//g' <<< $FILE_AND_LINE)
-    LINE=$(sed -e 's/.*:\(.*\):.*/\1/' <<< $FILE_AND_LINE)
-    LINE=$LINE+$OFFSET
-    if [[ ! -z "${FILE}" ]] ; then
-        #vim +$LINE $FILE
-        vim "+normal $(LINE)G|" $FILE
-    fi
+	    if [[ ! -z "${FILE}" ]] ; then
+	        #vim +$LINE $FILE
+	        #vim "+normal $(LINE)G|" $FILE
+	        echo $FILE $LINE
+	    fi
+    else 
+    	#echo abort
+	fi
 }
 
-# TODO: De-duplicate from __impl_t
+# TODO: De-duplicate from __impl_t_fuzzy
 function __impl_t_exact() {
-    OFFSET="${1}"
-    if [[ -z "${OFFSET}" ]] ; then
-        OFFSET = 0
-    fi
+	FILE_AND_LINE=$(ag --nobreak --noheading . ~ | fzf -e --preview='t_preview {}')
+    if [[ -n "${FILE_AND_LINE}" ]]; then
+	    FILE=$(sed 's/:.*//g' <<< $FILE_AND_LINE)
+	    let LINE=$(sed -e 's/.*:\(.*\):.*/\1/' <<< $FILE_AND_LINE)
 
-    FILE_AND_LINE=$(ag --nobreak --noheading . | fzf -e --preview='t_preview {}')
-    FILE=$(sed 's/:.*//g' <<< $FILE_AND_LINE)
-    LINE=$(sed -e 's/.*:\(.*\):.*/\1/' <<< $FILE_AND_LINE)
-    LINE=$LINE+$OFFSET
-    if [[ ! -z "${FILE}" ]] ; then
-        #vim +$LINE $FILE
-        vim "+normal $(LINE)G|ww|dit|" $FILE
-    fi
+	    if [[ ! -z "${FILE}" ]] ; then
+	        #vim +$LINE $FILE
+	        #vim "+normal $(LINE)G|" $FILE
+	        echo $FILE $LINE
+	    fi
+    else 
+    	#echo abort
+	fi
 }
 
 
@@ -87,26 +87,8 @@ function __impl_get_version() {
 }
 
 function __impl_get_maven_version() {
-    local pom_path="${pwd}/pom.xml"
-    if [[ -f "${pom_path}" ]] ; then
-        local version=$(/usr/bin/xmllint --format "${pom_path}" 2> /dev/null | /usr/bin/sed '2 s/xmlns=".*"//g' | /usr/bin/xmllint --xpath '//project/version/text()' - 2> /dev/null)
-        if [[ -z "${version}" ]] ; then
-            version=$(/usr/bin/xmllint --format "${pom_path}" 2> /dev/null | /usr/bin/sed '2 s/xmlns=".*"//g' | /usr/bin/xmllint --xpath '//project/parent/version/text()' - 2> /dev/null)'*'
-        fi
-        if [[ -z "${version}" ]] ; then
-            return 0
-        fi
-        if [[ "${directory_original}" != "${pwd}" ]] ; then
-            version="${version}^"
-        fi
-        echo "${version##\$}"
-        return 0
-    else
-	    >&2 echo "File not found $pom_path"
-    fi
+    __looklet_xpath_pom_version
 }
-
-
 
 #function __impl_private_choose_one_file_from() {
 #	find "$1" -print | fzf "${@:2}"
@@ -128,4 +110,12 @@ function __impl_choose_one_file_from_root() {
 function __impl_choose_one_file_from_root_exact() {
 	local temp=$(sudo find / -print) # TODO: Terminating the pipe is very slow but sudo find is piped before password is written
 	echo $temp | fzf -e
+}
+
+function __impl_git_commit() {
+	__looklet_git_commit "${@}"
+}
+
+function __impl_open_github() {
+	__looklet_open_pr
 }

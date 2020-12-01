@@ -26,33 +26,33 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
 * `.n`    git new
 
 ## Nouns
-* `1b` one branch
-* `.b`    this branch
-
-* `.d`    this dir
-* `1d`    one dir (from home)
-* `1D`    one dir (from /)
-* `1.d`    one dir (from .d)
-* `d1f`    dir of one file        (kind of breaks grammar)
-* `d1F`    sudo dir of one file   (kind of breaks grammar)
-
-* `1f`     one file
-* `1F`     sudo one file
-
-* `p`     pasting
-
-* `d`    develop
-* `m`    master
-* `.v`    this version
-* `.c`    this commit (message)
-* `1t`	one text row (search)
+* `b` branch
+* `c` commit (message)
+* `d` directory
+* `d` develop (only contextual)
+* `D` more directory
+* `f` file (search under ~)
+* `F` file (search under /)
+* `m` master (only contextual)
+* `p` pasting (like vim)
+* `v` version
+* `t` text row (search under ~)
+* `T` text row (search under /)
 
 ## Special
-* `1`     one - One should be selected. Where to choose from depends on context. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
+* `1` one - One should be selected. Where to choose from depends on context, especially the NOUN. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
     * e.g. `e1f` "echo one file"
 
-* `.`     this - Determines which item from context in contrast to `1` which needs user 
-    * e.g. `y.d` "yank this dir"
+* `.` local - Determines which item from context in contrast to `1` which needs user 
+    * `y.d` "yank this dir"
+	* `.t` text row (search under .)
+	* `.f` 
+
+* Combining `1.` search here. 
+	* `1.f` one local file (search under .) 
+
+* `d1f`   dir of one file        (kind of breaks grammar)
+* `d1F`   sudo dir of one file   (kind of breaks grammar)
 
 ## Adjectives
 * `j`     jira as an adjective

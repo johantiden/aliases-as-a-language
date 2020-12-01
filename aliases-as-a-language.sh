@@ -7,6 +7,7 @@ source $thisDirectory/impl.sh
 # Verbs
 #########################
 alias b='git checkout '
+alias c='__impl_git_commit '
 alias e='echo '
 alias m='merge '
 alias o='__impl_open '
@@ -18,8 +19,8 @@ alias Z='sudo subl '
 
 # Nouns
 #########################
-alias 1b='g1b'
 alias 1d='cd `e1d`'
+alias 1ed='cd `e1ed`'
 alias 1D='cd `e1D`'
 alias d1f='cd `ed1f`'
 alias d1F='cd `ed1F`'
@@ -29,13 +30,21 @@ alias 1ef='e1ef'
 alias 1F='e1F'
 alias 1eF='e1eF'
 alias 1t='e1t'
-alias t='e1t'
-alias et='e1et'
+alias 1et='e1et'
+
 
 # Special
 #########################
 alias 1='fzf '
 alias x1='dmenu '
+
+
+# Assumptions from context
+#########################
+alias 1b='g1b'
+alias t='e1t'
+alias et='e1et'
+alias ev='e.v'
 
 # Sentences
 #########################
@@ -65,10 +74,11 @@ alias e1F='__impl_choose_one_file_from_root'
 # echo one exact file from /
 alias e1eF='__impl_choose_one_file_from_root_exact'
 
-alias e1d='find ~ -type d | 1'					# echo dir from ~
-alias e1D='sudo find / -type d | 1'				# echo dir from /
-alias e1t='__impl_t'							# echo file and row
-alias e1et='__impl_t_exact'						# echo file and row, exact match
+alias e1d='find ~ -type d | fzf'				# echo dir from ~
+alias e1ed='find ~ -type d | fzf -e'			# echo dir from ~, exact
+alias e1D='sudo find / -type d | fzf'			# echo dir from /
+alias e1t='__impl_t_fuzzy'						# echo file and row
+alias e1et='__impl_t_exact'						# echo file and row, exact
 
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
 alias ed1F='dirname `e1F`'						# echo dir of one file from /
@@ -88,13 +98,14 @@ alias mp='merge $(p)' 		#merge pasting
 alias np='n $(p)'  			#new-branch pasting
 
 ### Open
-alias o1d='o `e1d`' 		#open one dir from ~
-alias o.d='o `pwd`'			#open this dir
-alias oD='o `e1D`'			#open one dir from /
-alias o1f='o `e1f`'			#open one file file from ~
-alias o1F='o `e1F`'			#open one file file from /
-alias of='o1f'				#open one file file from ~
-alias op='o $(p)'			#open pasting
+alias o.b='__impl_open_github ' #open this branch (on github)
+alias o1d='o `e1d`' 			#open one dir from ~
+alias o.d='o `pwd`'				#open this dir
+alias oD='o `e1D`'				#open one dir from /
+alias o1f='o `e1f`'				#open one file file from ~
+alias o1F='o `e1F`'				#open one file file from /
+alias of='o1f'					#open one file file from ~
+alias op='o $(p)'				#open pasting
 
 
 ### Remove
@@ -111,7 +122,6 @@ alias r1f='rm $(e1f)'				#remove one file
 alias r1F='rm $(e1F)'				#remove one sudo file
 
 alias rd='echo remove develop not allowed'
-alias rm='echo remove master not allowed'
 alias r.v='echo remove this version does not make sense'
 alias r.c='echo not implemented. hmm maybe' # Maybe "git reset HEAD^" ?
 
