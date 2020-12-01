@@ -25,7 +25,6 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
 * `Z`     sudo sublime
 * `.n`    git new
 
-
 ## Nouns
 * `1b` one branch
 * `.b`    this branch
@@ -46,6 +45,7 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
 * `m`    master
 * `.v`    this version
 * `.c`    this commit (message)
+* `1t`	one text row (search)
 
 ## Special
 * `1`     one - One should be selected. Where to choose from depends on context. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
@@ -60,7 +60,8 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
     * `njp`      "new branch, jira-pasting"
 * `g`     git as an adjective
     * `og1v`        "open a git version" - open here, to mean open github. git can usually be derived from context so it may now be needed. "e.v" - echo this version can be safely assumed to be a git version, so it should behave the same as "eg.v"
-
+* `e` 	exact. this instructs searches to use exact matching isntead of fuzzy search, which is defautl
+	* e.g. `o1ef` "open one exact file"
 
 # Grammar
 * Verb alone expects an argument eg "e hej"
