@@ -6,6 +6,11 @@ THIS IS VERY MUCH A WORK IN PROGRESS!!!!
 HELP WANTED!
 
 
+# Usage
+Clone this repository and source the `aliases-as-a-language` file into you .bashrc or similar.
+
+
+
 ##########################
 # Language
 ##########################
