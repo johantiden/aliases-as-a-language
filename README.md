@@ -1,8 +1,11 @@
 # aliases-as-a-language
 
+A cool name is needed to make this go viral!
+
 This is an attempt to create a language for common (for me) terminal aliases. This is inspired by the language used in VIM. The main idea is to have a simple VERB-NOUN grammar for most actions, this allows the user to dynamically compose commands and helps create completeness to the alias suite. It's simpler to learn the aliases once you have leared the available words. Composing sentences should come naturally after a while.
 
 THIS IS VERY MUCH A WORK IN PROGRESS!!!!
+
 HELP WANTED!
 
 
