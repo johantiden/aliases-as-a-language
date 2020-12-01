@@ -28,7 +28,6 @@ alias 1F='e1F'
 alias 1='fzf '
 alias x1='dmenu '
 
-
 # Sentences
 #########################
 alias bd='b develop'							# branch develop
@@ -57,21 +56,22 @@ alias e.d='pwd'
 alias ep='clipL'								# echo pasting
 alias e.v='getMavenProjectVersion '     		# echo this version
 
-
+### Go
 alias g1d='cd `e1d`' 		#go one dir
 alias g1b='b `e1b`' 		#go one branch (checkout)
 
-
+### Merge
 alias mb='merge `e1b`' 		#merge branch
-alias mp='git merge $(p)' 	#merge pasting
+alias mp='merge $(p)' 		#merge pasting
+
 alias np='n $(p)'  			#new-branch pasting
 
-
-alias o1d='o `e1d`' 	#open one dir from ~
-alias o.d='o `pwd`'		#open this dir
-alias oD='o `e1D`'		#open one dir from /
-alias o1f='o `e1f`'		#open one file file from ~
-alias op='o $(p)'		#open pasting
+### Open
+alias o1d='o `e1d`' 		#open one dir from ~
+alias o.d='o `pwd`'			#open this dir
+alias oD='o `e1D`'			#open one dir from /
+alias o1f='o `e1f`'			#open one file file from ~
+alias op='o $(p)'			#open pasting
 
 
 ### Remove
