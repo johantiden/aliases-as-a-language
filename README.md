@@ -48,9 +48,10 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
 * .c    this commit (message)
 
 ## Special
-* 1     one
+* 1     one - One should be selected. Where to choose from depends on context. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
 	* e.g. e1f "echo one file"
-* .     this
+
+* .     this - Determines which item from context in contrast to `1` which needs user input 
 	* e.g. y.d "yank this dir"
 
 ## Adjectives
