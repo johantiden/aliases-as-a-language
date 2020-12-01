@@ -12,74 +12,73 @@ Clone this repository and source the `aliases-as-a-language` file into you .bash
 
 # Language
 ## Verbs:
-* b		(go)branch
-* c     commit
-* e		echo
-* g		go (contextual)
-* m     git-merge
-* o     open
-* r     remove (contextual)
-* v 	version
-* y     yank (as in vim)
-* z     sublime
-* Z     sudo sublime
-* .n    git new
+* `b`     (go)branch
+* `c`     commit
+* `e`     echo
+* `g`     go (contextual)
+* `m`     git-merge
+* `o`     open
+* `r`     remove (contextual)
+* `v`     version
+* `y`     yank (as in vim)
+* `z`     sublime
+* `Z`     sudo sublime
+* `.n`    git new
 
 
 ## Nouns
-* 1b	one branch
-* .b	this branch
+* `1b` one branch
+* `.b`    this branch
 
-* .d	this dir
-* 1d	one dir (from home)
-* 1D	one dir (from /)
-* 1.d	one dir (from .d)
-* d1f	dir of one file
-* d1F	sudo dir of one file
+* `.d`    this dir
+* `1d`    one dir (from home)
+* `1D`    one dir (from /)
+* `1.d`    one dir (from .d)
+* `d1f`    dir of one file        (kind of breaks grammar)
+* `d1F`    sudo dir of one file   (kind of breaks grammar)
 
-* 1f 	one file
-* 1F 	sudo one file
+* `1f`     one file
+* `1F`     sudo one file
 
-* p     pasting
+* `p`     pasting
 
-* d    develop
-* m    master
-* .v    this version
-* .c    this commit (message)
+* `d`    develop
+* `m`    master
+* `.v`    this version
+* `.c`    this commit (message)
 
 ## Special
-* 1     one - One should be selected. Where to choose from depends on context. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
-	* e.g. e1f "echo one file"
+* `1`     one - One should be selected. Where to choose from depends on context. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
+    * e.g. `e1f` "echo one file"
 
-* .     this - Determines which item from context in contrast to `1` which needs user input 
-	* e.g. y.d "yank this dir"
+* `.`     this - Determines which item from context in contrast to `1` which needs user 
+    * e.g. `y.d` "yank this dir"
 
 ## Adjectives
-* j 	jira as an adjective
-	* oj.v     "open jira, this-version"
-	* njp      "new branch, jira-pasting"
-* g     git as an adjective
-	* og1v 	   "open a git version" - open here, to mean open github. git can usually be derived from context so it may now be needed. "e.v" - echo this version can be safely assumed to be a git version, so it should behave the same as "eg.v"
-
+* `j`     jira as an adjective
+    * `oj.v`     "open jira, this-version"
+    * `njp`      "new branch, jira-pasting"
+* `g`     git as an adjective
+    * `og1v`        "open a git version" - open here, to mean open github. git can usually be derived from context so it may now be needed. "e.v" - echo this version can be safely assumed to be a git version, so it should behave the same as "eg.v"
 
 
 # Grammar
 * Verb alone expects an argument eg "e hej"
 
 * Behavior from noun alone depends on context. 
-	*`f` will will echo the file. 
-	*`1d` will cd to a directory.
+    *`f` will will echo the file. 
+    *`1d` will cd to a directory.
 
 * Some verbs are contextual.
-	* e.g. `r`. `r.b` remove this branch
+    * e.g. `r`. `r.b` remove this branch
 
 ## Building sentences
 *VERB-NOUN sentence should give the noun as an argument to the verb. Note that the verb always comes before the noun.
-	* e.g. `of` open file
+    * e.g. `of` open file
 
 *VERB-ADJECTIVE-NOUN should act as VERB-NOUN, the ADJECTIVE give some context to the sentence.
-	* e.g. `og1f` open one git file - This could be interpreted as to open the chosen file on github.
+    * e.g. `og1f` open one git file - This could be interpreted as to open the chosen file on github.
 
 *NOTE: SOME VERBS ARE ALSO NOUNS! 
-	*e.g. `cp` will commit with the clipboard contents as message. 
-	*`yc` will yank the latest commit message. 
+    *`cp` will commit with the clipboard contents as message. 
+    *`yc` will yank the latest commit message. 
