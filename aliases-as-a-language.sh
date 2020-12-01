@@ -39,20 +39,21 @@ alias x1='dmenu '
 
 # Sentences
 #########################
+### Branch
 alias bd='b develop'							# branch develop
 alias bm='b master'								# branch master
 alias bp='b $(p)'								# branch pasting
 alias b1b='b `e1b`'								# branch one branch
 
+### Commit
 alias cp='c $(p)'								# commit pasting (as message)
 
+### Echo
 alias e1b='__impl_choose_branch'				# echo branch
 alias e.b='git branch --show-current '  		# echo this branch
 alias e.c='git --no-pager log -n1 --pretty=format:"%s"'	# echo this commit message
 
-
-# echo one file from ~
-alias e1f='__impl_choose_one_file_from_home'
+alias e1f='__impl_choose_one_file_from_home'	# echo one file from ~
 alias ef='e1f'
 
 # echo one exact file from ~
@@ -83,6 +84,7 @@ alias g1b='b `e1b`' 		#go one branch (checkout)
 alias mb='merge `e1b`' 		#merge branch
 alias mp='merge $(p)' 		#merge pasting
 
+### New
 alias np='n $(p)'  			#new-branch pasting
 
 ### Open
