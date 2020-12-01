@@ -1,0 +1,200 @@
+
+##########
+# Language
+##########
+
+# Verbs:
+##########################
+# b		(go)branch
+# c     commit
+# e		echo
+# g		go (contextual)
+# m     git-merge
+# o     open
+# r     remove (contextual)
+# v 	version
+# y     yank (as in vim)
+# z     sublime
+# Z     sudo sublime
+# .n    git new
+
+alias b='git checkout '
+alias e='echo '
+alias m='merge '
+alias o='xdg-open '
+alias p='ep'
+alias y='clipS'
+alias v='__looklet_maven_version '
+alias z='subl '
+alias Z='sudo subl '
+
+# Nouns:
+#########################
+# 1b	one branch
+# .b	this branch
+
+# .d	this dir
+# 1d	one dir (from home)
+# 1D	one dir (from /)
+# 1.d	one dir (from .d)
+# d1f	dir of one file
+# d1F	sudo dir of one file
+
+
+# 1f 	one file
+# 1F 	sudo one file
+
+# p     pasting
+
+# d    develop
+# m    master
+# .v    this version
+# .c    this commit (message)
+
+alias 1b='g1b'
+alias 1d='cd `e1d`'
+alias 1D='cd `e1D`'
+alias d1f='cd `ed1f`'
+alias d1F='cd `ed1F`'
+alias 1f='e1f'
+alias 1F='e1F'
+
+# Special
+# 1     one
+alias 1='fzf '
+alias x1='dmenu '
+
+# .     this
+	# eg. y.d "yank this dir"
+
+# j 	jira as an adjective
+	# oj.v     "open jira, this-version"
+	# njp      "new branch, jira-pasting"
+
+
+
+#########################
+# sentences
+#########################
+# Grammar:
+# Verb alone expects an argument eg "e hej"
+
+# Behavior from noun alone depends on context. 
+	# `f` will will echo the file. 
+	# `.d` will change branch to develop.
+
+# VERB-NOUN sentence should give the noun as an argument to the verb. 
+	# `of` open file
+# VERB-ADJECTIVE-NOUN should act as VERB-NOUN, the ADJECTIVE should modify the NOUN
+
+# NOTE: SOME VERBS ARE ALSO NOUNS! 
+	# e.g. `cp` will commit with the clipboard contents as message. 
+	# `yc` will yank the latest commit message. 
+
+# branch develop
+alias bd='b develop'
+# branch master
+alias bm='b master'
+# branch pasting
+alias bp='b $(p)'
+# branch one branch
+alias b1b='b `e1b`'
+
+# commit pasting (as message)
+alias cp='c $(p)'
+
+# echo branch
+alias e1b='__johan_choose_branch'
+# echo this branch
+alias e.b='git branch --show-current '
+# echo this commit message
+alias e.c=''
+# echo file
+alias e1f='find ~ -print | grep -v ".git" | grep -v ".icons" | grep -v ".cache"| grep -v ".fzf" | grep -v ".m2" | grep -v ".PlayOnLinux" | grep -v ".config/google-chrome" | grep -v ".gcloud"  | grep -v ".config/libreoffice" | fzf'
+alias e1F='sudo find / -print | grep -v ".git" | grep -v ".icons" | grep -v ".cache"| grep -v ".fzf" | grep -v ".m2" | grep -v ".PlayOnLinux" | grep -v ".config/google-chrome" | grep -v ".gcloud"  | grep -v ".config/libreoffice" | fzf'
+# echo dir
+alias e1d='find ~ -type d | 1'
+alias e1D='sudo find / -type d | 1'
+alias ed1f='dirname `e1f`'
+alias ed1F='dirname `e1F`'
+alias e.d='pwd'
+# echo pasting
+alias ep='clipL'
+# echo this version
+alias e.v='getMavenProjectVersion '
+
+# go one dir
+alias g1d='cd `e1d`'
+# go one branch
+alias g1b='b `e1b`'
+
+# merge branch
+alias mb='merge `eb`'
+# merge pasting
+alias mp='git merge $(p)'
+# new-branch pasting
+alias np='n $(p)'
+
+#open dir
+alias o1d='o `e1d`'
+alias o.d='o `pwd`'
+alias oD='o `D`'
+# open file
+alias of='o `f`'
+# open pasting
+alias op='o $(p)'
+
+
+
+
+alias rp='brm $(p)'					#remove-branch pasting
+alias r1b='echo not implemented' 	#remove one branch
+alias r.b='echo not implemented' 	#remove this branch
+alias r.d='echo not implemented'	#remove this dir
+alias r1d='echo not implemented'	#remove one dir
+alias r1D='echo not implemented' 	#remove one sudo dir
+alias r1.d='echo not implemented'	#remove this dir
+alias rd1f='echo not implemented'	#remove dir of one file
+alias rd1F='echo not implemented'	#remove dir of one sudo file
+alias r1f='rm $(e1f)'				#remove one file
+alias r1F='rm $(e1F)'				#remove one sudo file
+
+alias rd='echo remove develop not allowed'
+alias rm='echo remove master not allowed'
+alias r.v='echo remove this version does not make sense'
+alias r.c='echo not implemented. hmm maybe' # Maybe "git reset HEAD^" ?
+
+
+# version pasting
+alias vp='v $(p)'
+
+
+# yank branch
+alias yb='eb | y'
+# yank this branch
+alias y.b='e.b | y'
+# yank one dir
+alias y1d='e1d | y'
+# yank this dir
+alias y.d='e.d | y'
+# yank file
+alias y1f='1f | y'
+# yank this version
+alias y.v='e.v | y'
+# yank this commit message
+alias y.c='git log -n1 --pretty=format:"%s" | y'
+
+# sublime file
+alias z1f='z `e1f`'
+alias z1F='z `e1F`'
+alias Z1f='Z `e1f`'
+alias Z1F='Z `eF`'
+
+# sublime pasting
+alias zp='z `p`'
+alias Zp='Z `p`'
+
+
+
+alias pp='git pull'
+alias dt='git difftool'
