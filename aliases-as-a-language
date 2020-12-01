@@ -1,4 +1,6 @@
 
+
+
 ##########
 # Language
 ##########
@@ -40,7 +42,6 @@ alias Z='sudo subl '
 # d1f	dir of one file
 # d1F	sudo dir of one file
 
-
 # 1f 	one file
 # 1F 	sudo one file
 
@@ -56,6 +57,7 @@ alias 1d='cd `e1d`'
 alias 1D='cd `e1D`'
 alias d1f='cd `ed1f`'
 alias d1F='cd `ed1F`'
+alias f='1f'
 alias 1f='e1f'
 alias 1F='e1F'
 
