@@ -10,7 +10,7 @@ HELP WANTED!
 A cool name is needed to make this go viral! Maybe vish - vi-like shell?
 
 # Usage
-Clone this repository and source the `aliases-as-a-language` file into you .bashrc or similar.
+Clone this repository and source the `aliases-as-a-language.sh` file into you .bashrc or similar.
 
 
 # Language
