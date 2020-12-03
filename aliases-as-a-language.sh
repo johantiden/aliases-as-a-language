@@ -6,7 +6,7 @@ source $thisDirectory/impl.sh
 
 # Verbs
 #########################
-alias b='git checkout '
+alias b='__impl_git_checkout_contextual '
 alias c='__impl_git_commit '
 alias e='echo '
 alias m='merge '
@@ -60,6 +60,8 @@ alias cp='c $(p)'								# commit pasting (as message)
 ### Echo
 alias e1b='__impl_choose_branch'				# echo branch
 alias e.b='git branch --show-current '  		# echo this branch
+alias eb='e.b'				# echo branch
+alias .b='e.b'  								# echo this branch
 alias e.c='git --no-pager log -n1 --pretty=format:"%s"'	# echo this commit message
 
 alias e1f='__impl_choose_one_file_from_home'	# echo one file from ~
@@ -86,9 +88,13 @@ alias e.d='pwd'
 alias ep='clipL'								# echo pasting
 alias e.v='__impl_get_version ' 	    		# echo this version
 
-### Go
-alias g1d='cd `e1d`' 		#go one dir
-alias g1b='b `e1b`' 		#go one branch (checkout)
+### Get
+alias g='gg'				#get
+alias g1d='cd `e1d`' 		#get one dir
+alias gd='bd' 				#get develop
+alias gg='git pull' 		#get git
+alias gm='bm' 				#get master
+alias g1b='b `e1b`' 		#get one branch (checkout)
 
 ### Merge
 alias mb='merge `e1b`' 		#merge branch
@@ -102,11 +108,11 @@ alias o.b='__impl_open_github ' #open this branch (on github)
 alias o1d='o `e1d`' 			#open one dir from ~
 alias o.d='o `pwd`'				#open this dir
 alias oD='o `e1D`'				#open one dir from /
-alias o1f='o `e1f`'				#open one file file from ~
-alias o1F='o `e1F`'				#open one file file from /
-alias of='o1f'					#open one file file from ~
+alias o1f='o `e1f`'				#open one file from ~
+alias o1F='o `e1F`'				#open one file from /
+alias of='o1f'					#open one file from ~
+alias og='pr'					#open git
 alias op='o $(p)'				#open pasting
-
 
 ### Remove
 alias rp='brm $(p)'					#remove-branch pasting
@@ -126,13 +132,19 @@ alias r.v='echo remove this version does not make sense'
 alias r.c='echo not implemented. hmm maybe' # Maybe "git reset HEAD^" ?
 
 
+### Up
+alias u='git push'					#up
+alias ug='git push'					#up git
+
+
 ### Version
 alias vp='v $(p)' # version pasting
 
 
 ### Yank
-alias yb='eb | y' 									# yank branch
+alias yb='y.b' 										# yank branch
 alias y.b='e.b | y' 								# yank this branch
+alias y1b='e1b | y' 								# yank this branch
 alias y1d='e1d | y' 								# yank one dir
 alias y.d='e.d | y' 								# yank this dir
 alias y1f='1f | y' 									# yank file
@@ -146,6 +158,9 @@ alias z1F='z `e1F`' # sublime one file from /
 alias Z1f='Z `e1f`' # sudo sublime one file from ~
 alias Z1F='Z `eF`' 	# sudo sublime one file from /
 
+alias z1t='__impl_z1t'
+alias z1et='__impl_z1et'
+
 alias zp='z `p`' # sublime pasting
 alias Zp='Z `p`' # sudo sublime pasting
 
@@ -153,5 +168,6 @@ alias Zp='Z `p`' # sudo sublime pasting
 
 ## TODO
 
-alias pp='git pull'
 alias dt='git difftool'
+alias s='git status'
+alias d='git --no-pager diff'

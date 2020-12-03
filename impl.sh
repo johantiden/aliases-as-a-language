@@ -36,7 +36,8 @@ function clipS() { xclip -selection c; }
 function clipL() { xclip -selection c -o | cat; }
 
 
-function __johan_b {
+# Simple git checkout if argument applied, otherwise ask for branch.
+function __impl_git_checkout_contextual {
     if [[ ! -z "${1}" ]] ; then
       git checkout "${1}"
     else
@@ -118,4 +119,12 @@ function __impl_git_commit() {
 
 function __impl_open_github() {
 	__looklet_open_pr
+}
+
+function __impl_z1t() {
+	__impl_t_fuzzy | sed -e "s/ /:/g" | xargs echo | xargs subl
+}
+
+function __impl_z1et() {
+	__impl_t_exact | sed -e "s/ /:/g" | xargs echo | xargs subl
 }
