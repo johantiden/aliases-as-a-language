@@ -55,7 +55,7 @@ alias bp='b $(p)'								# branch pasting
 alias b1b='b `e1b`'								# branch one branch
 
 ### Commit
-alias cp='c $(p)'								# commit pasting (as message)
+alias gcp='c $(p)'								# commit pasting (as message)
 
 ### Echo
 alias e1b='__impl_choose_branch'				# echo branch
@@ -64,7 +64,7 @@ alias eb='e.b'				# echo branch
 alias .b='e.b'  								# echo this branch
 alias e.c='git --no-pager log -n1 --pretty=format:"%s"'	# echo this commit message
 
-alias e1f='__impl_choose_one_file_from_home'	# echo one file from ~
+alias e1f='__impl_choose_one_file_from_home '	# echo one file from ~
 alias ef='e1f'
 
 # echo one exact file from ~
@@ -95,10 +95,12 @@ alias gd='bd' 				#get develop
 alias gg='git pull' 		#get git
 alias gm='bm' 				#get master
 alias g1b='b `e1b`' 		#get one branch (checkout)
+alias gb='g1b'	 			#get one branch (checkout)
 
 ### Merge
-alias mb='merge `e1b`' 		#merge branch
-alias mp='merge $(p)' 		#merge pasting
+alias mb='m1b'							#merge branch
+alias m1b='git merge --no-edit `e1b`'	#merge one branch
+alias mp='git merge --no-edit `p`' 		#merge pasting
 
 ### New
 alias np='n $(p)'  			#new-branch pasting
@@ -106,17 +108,20 @@ alias np='n $(p)'  			#new-branch pasting
 ### Open
 alias o.b='__impl_open_github ' #open this branch (on github)
 alias o1d='o `e1d`' 			#open one dir from ~
-alias o.d='o `pwd`'				#open this dir
+alias o.d='o .'				    #open this dir
+alias o.='o .'				    #open this dir
 alias oD='o `e1D`'				#open one dir from /
 alias o1f='o `e1f`'				#open one file from ~
+alias o1ef='o `e1ef`'			#open one file from ~, exact
 alias o1F='o `e1F`'				#open one file from /
+alias o1eF='o `e1eF`'				#open one file from /, exact
 alias of='o1f'					#open one file from ~
 alias og='pr'					#open git
 alias op='o $(p)'				#open pasting
 
 ### Remove
 alias rp='brm $(p)'					#remove-branch pasting
-alias r1b='echo not implemented' 	#remove one branch
+alias r1b='brm $(e1b)' 	#remove one branch
 alias r.b='echo not implemented' 	#remove this branch
 alias r.d='echo not implemented'	#remove this dir
 alias r1d='echo not implemented'	#remove one dir
@@ -153,12 +158,20 @@ alias y.c='e.c | y' 								# yank this commit message
 
 
 ### Sublime
+alias zf='z1f' # sublime one file from ~
 alias z1f='z `e1f`' # sublime one file from ~
 alias z1F='z `e1F`' # sublime one file from /
 alias Z1f='Z `e1f`' # sudo sublime one file from ~
-alias Z1F='Z `eF`' 	# sudo sublime one file from /
+alias Z1F='Z `e1F`' # sudo sublime one file from /
+
+alias zef='z1ef'      # sublime one file from ~
+alias z1ef='z `e1ef`' # sublime one file from ~
+alias z1eF='z `e1eF`' # sublime one file from /
+alias Z1ef='Z `e1ef`' # sudo sublime one file from ~
+alias Z1eF='Z `e1eF`' # sudo sublime one file from /
 
 alias z1t='__impl_z1t'
+alias zet='z1et'
 alias z1et='__impl_z1et'
 
 alias zp='z `p`' # sublime pasting

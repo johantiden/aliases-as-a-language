@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "DEBUG: open one (auto)file(s)~"
+
+o "${__impl_list_all_files_from_home | __impl_one}"

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "DEBUG:  one exact (auto)pasting"
+
+clipL | __impl_one_exact

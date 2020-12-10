@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "DEBUG: open"
+
+__impl_open "${@}"
