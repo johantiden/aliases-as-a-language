@@ -8,7 +8,10 @@
 
 
 function __debugecho {
-	echo DEBUG: "${@}"
+  RED='\033[0;34m'
+  NC='\033[0m' # No Color
+
+	echo -e ${RED}DEBUG: "${@}"${NC}
 }
 
 

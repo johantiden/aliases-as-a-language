@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": sublime one pasting(s)"
+__debugecho ": 'zf', short for 'z1f'"
 
-z "$(clipL)"
+z1f

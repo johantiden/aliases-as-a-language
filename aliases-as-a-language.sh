@@ -158,7 +158,6 @@ alias y.c='e.c | y' 								# yank this commit message
 
 
 ### Sublime
-alias zf='z1f' # sublime one file from ~
 alias z1f='z `e1f`' # sublime one file from ~
 alias z1F='z `e1F`' # sublime one file from /
 alias Z1f='Z `e1f`' # sudo sublime one file from ~

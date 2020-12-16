@@ -56,6 +56,18 @@ public class Build {
                 buildAll(verb, noun);
             }
         }
+
+        List<Sentence> specials = getSpecials();
+
+        for (Sentence special : specials) {
+            buildSpecial(special);
+        }
+    }
+
+    private static List<Sentence> getSpecials() {
+        return Arrays.asList(
+            Sentence.of("zf", "z1f")
+        );
     }
 
     private static List<Verb> getVerbs() {
@@ -71,7 +83,7 @@ public class Build {
 //                Word.of("m","merge"),
                 Verb.of("o","open",
                         Optional.of("__impl_open \"${@}\""),
-                        Optional.of("o \"${%s}\""),
+                        Optional.of("o \"$(%s)\""),
                         Optional.of("%s | xargs o")),
 
                 //Verb.of("r","remove", "#rm `%s`"),
@@ -79,16 +91,16 @@ public class Build {
 //                Word.of("u","up"),
                 Verb.of("y","yank",
                         Optional.of("echo \"${@}\" | clipS"),
-                        Optional.of("\"${%s}\" | clipS"),
+                        Optional.of("\"$(%s)\" | clipS"),
                         Optional.empty()
                 ),
                 Verb.of("z","sublime",
                         Optional.of("subl \"${@}\""),
-                        Optional.of("z \"${%s}\""),
+                        Optional.of("z \"$(%s)\""),
                         Optional.of("%s | xargs z")),
                 Verb.of("Z","(sudo)sublime",
                         Optional.of("sudo subl \"${@}\""),
-                        Optional.of("z \"${%s}\""),
+                        Optional.of("z \"$(%s)\""),
                         Optional.of("%s | xargs z"))
         );
     }
@@ -156,6 +168,11 @@ public class Build {
                 .ifPresent(impl -> build(description, sentenceFlat, impl));
     }
 
+    private static void buildSpecial(Sentence special) {
+        String description = "'" + special.command + "', short for '"+special.impl+"'";
+        build(description, special.command, special.impl);
+    }
+
     private static Optional<String> implAll(Verb verb, Noun noun) {
         return verb.implForMany.flatMap(verbForMany ->
                 noun.getImplAll()
@@ -197,9 +214,7 @@ public class Build {
                                 String.format(verbForOne, nounForOne)));
     }
 
-    private static void build(String description, String sentenceFlat, String impl) {
-        //        RandomAccessFile out = newFile(target, path);
-
+    private static void build(String description, String command, String impl) {
         String contents = "#!/usr/bin/env bash" + lineSeparator();
 //        contents += "echo $(dirname $0)/../impl.sh";
         contents += lineSeparator();
@@ -212,7 +227,7 @@ public class Build {
 //        out.writeUTF(contents);
 
         try {
-            final Path path = new File(String.format(FORMAT_OUT, sentenceFlat)).toPath();
+            final Path path = new File(String.format(FORMAT_OUT, command)).toPath();
             Set<PosixFilePermission> ownerWritable = PosixFilePermissions.fromString("rwxrwxr-x");
             FileAttribute<?> permissions = PosixFilePermissions.asFileAttribute(ownerWritable);
             Files.deleteIfExists(path);
@@ -289,6 +304,21 @@ public class Build {
 
         public Optional<String> getImplAll() {
             return implAll;
+        }
+    }
+
+    private static class Sentence {
+        final String command;
+        final String impl;
+
+        private Sentence(String command, String impl) {
+            this.command = command;
+            this.impl = impl;
+        }
+
+
+        public static Sentence of(String command, String impl) {
+            return new Sentence(command, impl);
         }
     }
 }
