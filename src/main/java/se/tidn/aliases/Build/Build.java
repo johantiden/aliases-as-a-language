@@ -18,8 +18,7 @@ import static java.lang.System.lineSeparator;
 
 public class Build {
 
-    public static final String FORMAT_SENTENCE = "src/main/resources/sentences/%s";
-    public static final String FORMAT_OUT = "out/_%s";
+    public static final String FORMAT_OUT = "bin/%s";
 
     private static class Word {
         private final String command;
@@ -39,7 +38,7 @@ public class Build {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         List<Verb> verbs = getVerbs();
         List<Noun> allNouns = getNouns();
 
@@ -60,7 +59,7 @@ public class Build {
     }
 
     private static List<Verb> getVerbs() {
-        List<Verb> verbs = Arrays.asList(
+        return Arrays.asList(
                 Verb.of("", "",
                         Optional.empty(),
                         Optional.of("%s"),
@@ -87,7 +86,6 @@ public class Build {
 //                Word.of("z","subl"),
 //                Word.of("Z","sudo subl")
         );
-        return verbs;
     }
 
     private static ArrayList<Noun> getNouns() {
@@ -198,8 +196,11 @@ public class Build {
         //        RandomAccessFile out = newFile(target, path);
 
         String contents = "#!/usr/bin/env bash" + lineSeparator();
+//        contents += "echo $(dirname $0)/../impl.sh";
         contents += lineSeparator();
-        contents += "echo \"DEBUG: " + description + "\"" + lineSeparator();
+        contents += "source $(dirname $0)/../impl.sh";
+        contents += lineSeparator();
+        contents += "__debugecho \": " + description + "\"" + lineSeparator();
         contents += lineSeparator();
         contents += impl;
 

@@ -1,8 +1,8 @@
 #/usr/bin/env bash
 
+source $(dirname $0)/impl.sh
 
-local thisDirectory=$(dirname $0)
-source $thisDirectory/impl.sh
+export PATH=$thisDirectory/bin:$PATH
 
 # Verbs
 #########################
@@ -10,7 +10,6 @@ alias b='__impl_git_checkout_contextual '
 alias c='__impl_git_commit '
 alias e='echo '
 alias m='merge '
-alias o='__impl_open '
 alias p='ep'
 alias y='clipS'
 alias v='__impl_set_version '

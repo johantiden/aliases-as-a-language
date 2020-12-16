@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo "DEBUG: open all pasting"
-
-clipL | xargs open

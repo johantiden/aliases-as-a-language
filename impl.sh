@@ -6,6 +6,12 @@
 # Try to avoid using any of the language here.
 
 
+
+function __debugecho {
+	echo DEBUG: "${@}"
+}
+
+
 function __impl_merge {
     git merge --no-edit "${@}"
 }
@@ -31,7 +37,10 @@ function __impl_choose_branch {
 }
 
 function clipS { xclip -selection c; }
-function clipL { xclip -selection c -o | cat; }
+function clipL {
+	xclip -selection c -o \
+	    | xargs -0 echo
+}
 
 
 # Simple git checkout if argument applied, otherwise ask for branch.
@@ -58,7 +67,7 @@ function __impl_t_fuzzy {
             echo $FILE $LINE
         fi
     else
-        #echo abort
+        echo abort
     fi
 }
 
@@ -75,7 +84,7 @@ function __impl_t_exact {
             echo $FILE $LINE
         fi
     else
-        #echo abort
+        echo abort
     fi
 }
 

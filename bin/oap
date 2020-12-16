@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source $(dirname $0)/../impl.sh
+debugecho ": open all pasting"
+
+clipL | xargs open

@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo DEBUG: yank file~
-
-`__impl_choose_one_file_from_home` | clipS

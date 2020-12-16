@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo "DEBUG: open one pasting"
-
-o "${clipL}"

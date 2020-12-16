@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo "DEBUG:  all file(s)~"
-
-__impl_list_all_files_from_home

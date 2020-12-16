@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo DEBUG: __impl_open
-
-__impl_open "${@}"
