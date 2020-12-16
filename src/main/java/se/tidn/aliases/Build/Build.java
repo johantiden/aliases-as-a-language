@@ -72,8 +72,7 @@ public class Build {
                 Verb.of("o","open",
                         Optional.of("__impl_open \"${@}\""),
                         Optional.of("o \"${%s}\""),
-                        Optional.of("%s | xargs open")),
-
+                        Optional.of("%s | xargs o")),
 
                 //Verb.of("r","remove", "#rm `%s`"),
 //                Word.of("v","(set)version"),
@@ -82,9 +81,15 @@ public class Build {
                         Optional.of("echo \"${@}\" | clipS"),
                         Optional.of("\"${%s}\" | clipS"),
                         Optional.empty()
-                )
-//                Word.of("z","subl"),
-//                Word.of("Z","sudo subl")
+                ),
+                Verb.of("z","sublime",
+                        Optional.of("subl \"${@}\""),
+                        Optional.of("z \"${%s}\""),
+                        Optional.of("%s | xargs z")),
+                Verb.of("Z","(sudo)sublime",
+                        Optional.of("sudo subl \"${@}\""),
+                        Optional.of("z \"${%s}\""),
+                        Optional.of("%s | xargs z"))
         );
     }
 
@@ -101,7 +106,7 @@ public class Build {
                         Optional.of("__impl_list_all_files_from_home")),
 //                Word.of("F", "file/"),
 //                Word.of("m", "master"),
-                Noun.of("p", "pasting",
+                Noun.of("p", "pasting(s)",
                         Optional.of("clipL"),
                         Optional.of("clipL"),
                         Optional.of("clipL"),
@@ -198,7 +203,7 @@ public class Build {
         String contents = "#!/usr/bin/env bash" + lineSeparator();
 //        contents += "echo $(dirname $0)/../impl.sh";
         contents += lineSeparator();
-        contents += "source $(dirname $0)/../impl.sh";
+        contents += "source \"$(dirname $0)/../impl.sh\"";
         contents += lineSeparator();
         contents += "__debugecho \": " + description + "\"" + lineSeparator();
         contents += lineSeparator();

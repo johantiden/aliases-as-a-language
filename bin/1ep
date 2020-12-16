@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $(dirname $0)/../impl.sh
-debugecho ":  one exact (auto)pasting"
+source "$(dirname $0)/../impl.sh"
+__debugecho ":  one exact (auto)pasting(s)"
 
 clipL | __impl_one_exact

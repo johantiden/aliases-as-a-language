@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ":  all pasting(s)"
+__debugecho ": (sudo)sublime"
 
-clipL
+sudo subl "${@}"

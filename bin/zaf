@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": sublime all file(s)~"
+
+__impl_list_all_files_from_home | xargs z

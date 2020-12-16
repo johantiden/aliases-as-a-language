@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": sublime one exact (auto)file(s)~"
+
+z "${__impl_list_all_files_from_home | __impl_one_exact}"

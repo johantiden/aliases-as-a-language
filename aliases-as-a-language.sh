@@ -1,8 +1,11 @@
 #/usr/bin/env bash
 
-source $(dirname $0)/impl.sh
+thisDirectory=$(dirname $0)
+source $thisDirectory/impl.sh
 
 export PATH=$thisDirectory/bin:$PATH
+
+unalias z
 
 # Verbs
 #########################
@@ -13,8 +16,6 @@ alias m='merge '
 alias p='ep'
 alias y='clipS'
 alias v='__impl_set_version '
-alias z='subl '
-alias Z='sudo subl '
 
 # Nouns
 #########################
