@@ -81,7 +81,7 @@ public class Build {
 //                Word.of("c", "commit"),
 //                Word.of("g","get"),
 //                Word.of("m","merge"),
-                Verb.of("o","open",
+                Verb.of("o","open \"${@}\"",
                         Optional.of("__impl_open \"${@}\""),
                         Optional.of("o \"$(%s)\""),
                         Optional.of("%s | xargs o")),
@@ -176,8 +176,10 @@ public class Build {
     private static Optional<String> implAll(Verb verb, Noun noun) {
         return verb.implForMany.flatMap(verbForMany ->
                 noun.getImplAll()
-                        .map(nounForAll ->
-                                String.format(verbForMany, nounForAll)));
+                        .map(nounForAll -> {
+                                String inner = String.format(verbForMany, nounForAll);
+                                return "count=$("+nounForAll+" | wc -l)\n\nif ask \"Count is $count, continue?\" Y; then\n  "+inner+"\nfi;";
+                            }));
     }
 
     private static void buildSolo(Verb verb, String description) {

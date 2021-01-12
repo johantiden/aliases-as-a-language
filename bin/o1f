@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": open one (auto)file(s)~"
+__debugecho ": open "${@}" one (auto)file(s)~"
 
 o "$(__impl_list_all_files_from_home | __impl_one)"

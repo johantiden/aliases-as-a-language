@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": open"
+__debugecho ": open "${@}""
 
 __impl_open "${@}"
