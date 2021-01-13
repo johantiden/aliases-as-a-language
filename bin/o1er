@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": open "${@}" one exact (auto)repo(s)"
+
+o "$(_all_repos | __impl_one_exact)"

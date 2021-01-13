@@ -186,3 +186,11 @@ function __impl_z1t {
 function __impl_z1et {
     __impl_t_exact | sed -e "s/ /:/g" | xargs echo | xargs subl
 }
+
+function _impl_all_repos() {
+	find ~/git/looklet -maxdepth 1 -mindepth 1 -type d -printf '%f\n'
+}
+
+function _r() {
+    _all_repos | fzf
+}

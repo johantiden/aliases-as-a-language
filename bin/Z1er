@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": (sudo)sublime one exact (auto)repo(s)"
+
+z "$(_all_repos | __impl_one_exact)"
