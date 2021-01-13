@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": open "${@}" one repo(s)"
 
-o "$(er)"
+o "$(_r)"

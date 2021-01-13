@@ -191,6 +191,6 @@ function _impl_all_repos() {
 	find ~/git/looklet -maxdepth 1 -mindepth 1 -type d -printf '%f\n'
 }
 
-function _r() {
+function _r() { #TODO: Rename
     _all_repos | fzf
 }

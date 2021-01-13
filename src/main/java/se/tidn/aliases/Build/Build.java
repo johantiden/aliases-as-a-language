@@ -127,8 +127,8 @@ public class Build {
                 Noun.of("r", "repo(s)",
                         Optional.of("1r"),
                         Optional.of("echo 'this repo' not implemented."),
-                        Optional.of("er"), //TODO move from .zshrc to __impl
-                        Optional.of("_all_repos") //TODO move from .zshrc to __impl
+                        Optional.of("_r"),
+                        Optional.of("_all_repos")
                         )
 //                Word.of("v", "version"),
 //                Word.of("t", "text-line~"),
