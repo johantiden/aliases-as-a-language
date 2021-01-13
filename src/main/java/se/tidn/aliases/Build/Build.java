@@ -94,7 +94,7 @@ public class Build {
                         Optional.of("\"$(%s)\" | clipS"),
                         Optional.empty()
                 ),
-                Verb.of("z","sublime",
+                Verb.of("z","sublime \"${@}\"",
                         Optional.of("subl \"${@}\""),
                         Optional.of("z \"$(%s)\""),
                         Optional.of("%s | xargs z")),
