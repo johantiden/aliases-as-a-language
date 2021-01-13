@@ -6,12 +6,12 @@
 # Try to avoid using any of the language here.
 
 
-
+#TODO Use error output or other. Can't pipe this to other commands.
 function __debugecho {
   RED='\033[0;34m'
   NC='\033[0m' # No Color
 
-	echo -e ${RED}DEBUG: "${@}"${NC}
+	#echo -e ${RED}DEBUG: "${@}"${NC}
 }
 
 
@@ -188,7 +188,9 @@ function __impl_z1et {
 }
 
 function _impl_all_repos() {
-	find ~/git/looklet -maxdepth 1 -mindepth 1 -type d -printf '%f\n'
+  # TODO: ~/git is hardcoded. '~' would be nice as root but a lot of false positives pop up, and it's slow.
+  find ~/git -type d -exec test -e '{}/.git' ';' -print -prune
+	#find ~/git/looklet -maxdepth 1 -mindepth 1 -type d -printf '%f\n'
 }
 
 function _r() { #TODO: Rename
