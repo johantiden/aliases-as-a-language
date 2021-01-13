@@ -192,5 +192,5 @@ function _impl_all_repos() {
 }
 
 function _r() { #TODO: Rename
-    _all_repos | fzf
+    _impl_all_repos | fzf
 }
