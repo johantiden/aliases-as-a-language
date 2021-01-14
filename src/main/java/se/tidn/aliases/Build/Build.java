@@ -107,7 +107,11 @@ public class Build {
 
     private static ArrayList<Noun> getNouns() {
         List<Noun> nouns = Arrays.asList(
-//                Word.of("b", "branch"),
+                Noun.of("b", "branch(es)",
+                        Optional.of("1b"),
+                        Optional.of("git rev-parse --abbrev-ref HEAD"),
+                        Optional.empty(),
+                        Optional.of("__impl_get_all_branches")),
 //                Word.of("d", "directory~"),
 //                Word.of("D", "directory/"),
 //                Word.of("d", "develop"),
