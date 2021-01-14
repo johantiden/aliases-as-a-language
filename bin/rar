@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove all repo(s)"
+
+count=$(_impl_all_repos | wc -l)
+
+if ask "Count is $count, continue?" Y; then
+  target=$(_impl_all_repos);
+if ask "'rm $target', continue?" N; then
+  #rm $target
+  echo DRYRUN: rm $target
+fi;
+fi;

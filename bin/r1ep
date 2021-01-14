@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove one exact (auto)pasting(s)"
+
+target=$(clipL | __impl_one_exact);
+if ask "'rm $target', continue?" N; then
+  #rm $target
+  echo DRYRUN: rm $target
+fi;

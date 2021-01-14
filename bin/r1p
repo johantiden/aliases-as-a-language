@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove one pasting(s)"
+
+target=$(clipL);
+if ask "'rm $target', continue?" N; then
+  #rm $target
+  echo DRYRUN: rm $target
+fi;

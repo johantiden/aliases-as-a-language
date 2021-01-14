@@ -71,6 +71,12 @@ public class Build {
     }
 
     private static List<Verb> getVerbs() {
+        final Optional<String> rmImpl = Optional.of(
+                "target=$(%s);\n"
+                        + "if ask \"'rm $target', continue?\" N; then\n"
+                        + "  #rm $target\n"
+                        + "  echo DRYRUN: rm $target\n"
+                        + "fi;");
         return Arrays.asList(
                 Verb.of("", "",
                         Optional.empty(),
@@ -86,7 +92,10 @@ public class Build {
                         Optional.of("o \"$(%s)\""),
                         Optional.of("%s | xargs o")),
 
-                //Verb.of("r","remove", "#rm `%s`"),
+                Verb.of("r","remove",
+                        Optional.empty(),
+                        rmImpl,
+                        rmImpl                       ),
 //                Word.of("v","(set)version"),
 //                Word.of("u","up"),
                 Verb.of("y","yank",

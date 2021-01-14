@@ -129,7 +129,6 @@ alias r1D='echo not implemented' 	#remove one sudo dir
 alias r1.d='echo not implemented'	#remove this dir
 alias rd1f='echo not implemented'	#remove dir of one file
 alias rd1F='echo not implemented'	#remove dir of one sudo file
-alias r1f='rm $(e1f)'				#remove one file
 alias r1F='rm $(e1F)'				#remove one sudo file
 
 alias rd='echo remove develop not allowed'
