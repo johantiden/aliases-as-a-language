@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": sublime "${@}" one repo(s)"
+__debugecho ": sublime "${@}" one (auto)repo(s)"
 
-z "$(_r)"
+z "$(_impl_all_repos | __impl_one)"

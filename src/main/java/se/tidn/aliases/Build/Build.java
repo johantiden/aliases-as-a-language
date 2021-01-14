@@ -131,7 +131,7 @@ public class Build {
                 Noun.of("r", "repo(s)",
                         Optional.of("1r"),
                         Optional.of("echo 'this repo' not implemented."),
-                        Optional.of("_r"),
+                        Optional.empty(),
                         Optional.of("_impl_all_repos")
                         )
 //                Word.of("v", "version"),
