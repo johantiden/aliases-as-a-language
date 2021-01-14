@@ -72,11 +72,16 @@ public class Build {
 
     private static List<Verb> getVerbs() {
         final Optional<String> rmImpl = Optional.of(
-                "target=$(%s);\n"
-                        + "if ask \"'rm $target', continue?\" N; then\n"
-                        + "  #rm $target\n"
-                        + "  echo DRYRUN: rm $target\n"
-                        + "fi;");
+                  "target=$(%s);\n"
+                + "if [[ -z \"$target\" ]]; then\n"
+                + "  __debugecho abort\n"
+                + "  exit 0;\n"
+                + "fi\n"
+                + "\n"
+                + "if ask \"'rm $target', continue?\" N; then\n"
+                + "  #rm $target\n"
+                + "  echo DRYRUN: rm $target\n"
+                + "fi;");
         return Arrays.asList(
                 Verb.of("", "",
                         Optional.empty(),

@@ -7,6 +7,11 @@ count=$(_impl_all_repos | wc -l)
 
 if ask "Count is $count, continue?" Y; then
   target=$(_impl_all_repos);
+if [[ -z "$target" ]]; then
+  __debugecho abort
+  exit 0;
+fi
+
 if ask "'rm $target', continue?" N; then
   #rm $target
   echo DRYRUN: rm $target

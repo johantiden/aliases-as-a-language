@@ -7,6 +7,11 @@ count=$(clipL | wc -l)
 
 if ask "Count is $count, continue?" Y; then
   target=$(clipL);
+if [[ -z "$target" ]]; then
+  __debugecho abort
+  exit 0;
+fi
+
 if ask "'rm $target', continue?" N; then
   #rm $target
   echo DRYRUN: rm $target
