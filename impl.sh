@@ -134,7 +134,16 @@ function __impl_get_version {
 }
 
 function __impl_get_maven_version {
+  # TODO: copy paste looklet solution to make this standalone
     __looklet_xpath_pom_version
+}
+
+function __impl_second {
+    __impl_column 2
+}
+
+function __impl_column {
+    cut -d' ' -f"$1"
 }
 
 #function __impl_private_choose_one_file_from {
