@@ -9,13 +9,13 @@ unalias z
 
 # Verbs
 #########################
-alias b='__impl_git_checkout_contextual '
-alias c='__impl_git_commit '
+alias b='__johan_aliases_git_checkout_contextual '
+alias c='__johan_aliases_git_commit '
 alias e='echo '
 alias m='merge '
 alias p='ep'
 alias y='clipS'
-alias v='__impl_set_version '
+alias v='__johan_aliases_set_version '
 
 # Nouns
 #########################
@@ -58,35 +58,35 @@ alias b1b='b `e1b`'								# branch one branch
 alias gcp='c $(p)'								# commit pasting (as message)
 
 ### Echo
-alias e1b='__impl_choose_branch'				# echo branch
+alias e1b='__johan_aliases_choose_branch'				# echo branch
 alias e.b='git branch --show-current '  		# echo this branch
 alias eb='e.b'				# echo branch
 alias .b='e.b'  								# echo this branch
 alias e.c='git --no-pager log -n1 --pretty=format:"%s"'	# echo this commit message
 
-alias e1f='__impl_choose_one_file_from_home '	# echo one file from ~
+alias e1f='__johan_aliases_choose_one_file_from_home '	# echo one file from ~
 alias ef='e1f'
 
 # echo one exact file from ~
-alias e1ef='__impl_choose_one_file_from_home_exact'
+alias e1ef='__johan_aliases_choose_one_file_from_home_exact'
 
 # echo one file from /
-alias e1F='__impl_choose_one_file_from_root'
+alias e1F='__johan_aliases_choose_one_file_from_root'
 
 # echo one exact file from /
-alias e1eF='__impl_choose_one_file_from_root_exact'
+alias e1eF='__johan_aliases_choose_one_file_from_root_exact'
 
 alias e1d='find ~ -type d | fzf'				# echo dir from ~
 alias e1ed='find ~ -type d | fzf -e'			# echo dir from ~, exact
 alias e1D='sudo find / -type d | fzf'			# echo dir from /
-alias e1t='__impl_t_fuzzy'						# echo file and row
-alias e1et='__impl_t_exact'						# echo file and row, exact
+alias e1t='__johan_aliases_t_fuzzy'						# echo file and row
+alias e1et='__johan_aliases_t_exact'						# echo file and row, exact
 
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
 alias ed1F='dirname `e1F`'						# echo dir of one file from /
 alias e.d='pwd'
 alias ep='clipL'								# echo pasting
-alias e.v='__impl_get_version ' 	    		# echo this version
+alias e.v='__johan_aliases_get_version ' 	    		# echo this version
 
 ### Get
 alias g='gg'				#get
@@ -106,7 +106,7 @@ alias mp='git merge --no-edit `p`' 		#merge pasting
 alias np='n $(p)'  			#new-branch pasting
 
 ### Open
-alias o.b='__impl_open_github ' #open this branch (on github)
+alias o.b='__johan_aliases_open_github ' #open this branch (on github)
 alias o1d='o `e1d`' 			#open one dir from ~
 alias o.d='o .'				    #open this dir
 alias o.='o .'				    #open this dir
@@ -168,9 +168,9 @@ alias z1eF='z `e1eF`' # sublime one file from /
 alias Z1ef='Z `e1ef`' # sudo sublime one file from ~
 alias Z1eF='Z `e1eF`' # sudo sublime one file from /
 
-alias z1t='__impl_z1t'
+alias z1t='__johan_aliases_z1t'
 alias zet='z1et'
-alias z1et='__impl_z1et'
+alias z1et='__johan_aliases_z1et'
 
 alias zp='z `p`' # sublime pasting
 alias Zp='Z `p`' # sudo sublime pasting

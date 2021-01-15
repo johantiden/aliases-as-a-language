@@ -3,7 +3,7 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": remove one (auto)file(s)~"
 
-target=$(__impl_list_all_files_from_home | __impl_one);
+target=$(__johan_aliases_list_all_files_from_home | __johan_aliases_one);
 if [[ -z "$target" ]]; then
   __debugecho abort
   exit 0;

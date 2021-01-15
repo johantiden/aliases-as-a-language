@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ":  one exact (auto)branch(es)"
 
-__impl_get_all_branches | __impl_one_exact
+__johan_aliases_get_all_branches | __johan_aliases_one_exact

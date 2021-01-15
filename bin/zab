@@ -3,8 +3,8 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": sublime "${@}" all branch(es)"
 
-count=$(__impl_get_all_branches | wc -l)
+count=$(__johan_aliases_get_all_branches | wc -l)
 
 if ask "Count is $count, continue?" Y; then
-  __impl_get_all_branches | xargs z
+  __johan_aliases_get_all_branches | xargs z
 fi;

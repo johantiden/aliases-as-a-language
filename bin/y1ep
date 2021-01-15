@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": yank one exact (auto)pasting(s)"
 
-"$(clipL | __impl_one_exact)" | clipS
+"$(clipL | __johan_aliases_one_exact)" | clipS
