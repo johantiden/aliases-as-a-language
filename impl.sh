@@ -21,7 +21,7 @@ function __johan_aliases_merge {
 
 
 function __johan_aliases_open {
-    xdg-open "${@}"
+    xdg-open "${@}" &> /dev/null
 }
 
 function __johan_aliases_set_version {
@@ -185,7 +185,22 @@ function __johan_aliases_git_commit {
 }
 
 function __johan_aliases_open_github {
-    __looklet_open_pr
+    local repo="$2"
+    if [[ -z "${repo}" ]]; then 
+        repo=`pwd`
+    fi
+    local branch="$1"
+
+    pushd "${repo}"
+    local base_url=`__looklet_github_repository_url`
+    popd
+    
+    local url="${base_url}/tree/${branch}"
+    if [[ -z "${branch}" ]]; then
+        url="${base_url}"
+    fi
+
+    __johan_aliases_open "${url}"
 }
 
 function __johan_aliases_z1t {

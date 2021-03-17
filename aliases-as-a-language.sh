@@ -5,14 +5,10 @@ source $thisDirectory/impl.sh
 
 export PATH=$thisDirectory/bin:$PATH
 
-unalias z
-
 # Verbs
 #########################
 alias b='__johan_aliases_git_checkout_contextual '
 alias c='__johan_aliases_git_commit '
-alias e='echo '
-alias m='merge '
 alias p='ep'
 alias y='clipS'
 alias v='__johan_aliases_set_version '
@@ -87,6 +83,9 @@ alias ed1F='dirname `e1F`'						# echo dir of one file from /
 alias e.d='pwd'
 alias ep='clipL'								# echo pasting
 alias e.v='__johan_aliases_get_version ' 	    		# echo this version
+alias e.r='__looklet_github_repository_name'
+alias .r='e.r'
+
 
 ### Get
 alias g='gg'				#get
@@ -95,10 +94,12 @@ alias gd='bd' 				#get develop
 alias gg='git pull' 		#get git
 alias gm='bm' 				#get master
 alias g1b='b `e1b`' 		#get one branch (checkout)
-alias gb='g1b'	 			#get one branch (checkout)
+alias gb='git co -'	 		#get "back" 
 
 ### Merge
+alias m='merge '
 alias mb='m1b'							#merge branch
+alias md='m develop'					#merge develop
 alias m1b='git merge --no-edit `e1b`'	#merge one branch
 alias mp='git merge --no-edit `p`' 		#merge pasting
 
@@ -106,7 +107,13 @@ alias mp='git merge --no-edit `p`' 		#merge pasting
 alias np='n $(p)'  			#new-branch pasting
 
 ### Open
-alias o.b='__johan_aliases_open_github ' #open this branch (on github)
+alias o.b='__johan_aliases_open_github `e.b`' #open this branch (on github)
+alias ob='o.b' 								  #open this branch (on github)
+alias o.r='o.b'                               #open this repo (on github)
+alias or='o.r'                                #open this repo (on github)
+alias o1b='__johan_aliases_open_github `e1b`' #open one branch (on github)
+alias o1r='__johan_aliases_open_github "" `1r`' #open one branch (on github)
+
 alias o1d='o `e1d`' 			#open one dir from ~
 alias o.d='o .'				    #open this dir
 alias o.='o .'				    #open this dir
@@ -114,10 +121,17 @@ alias oD='o `e1D`'				#open one dir from /
 alias o1f='o `e1f`'				#open one file from ~
 alias o1ef='o `e1ef`'			#open one file from ~, exact
 alias o1F='o `e1F`'				#open one file from /
-alias o1eF='o `e1eF`'				#open one file from /, exact
+alias o1eF='o `e1eF`'			#open one file from /, exact
 alias of='o1f'					#open one file from ~
 alias og='pr'					#open git
 alias op='o $(p)'				#open pasting
+
+### "See"
+
+# See pasting
+alias catp='johan_view_pasting'
+alias c1f='cccat `e1f`'
+
 
 ### Remove
 alias rp='brm $(p)'					#remove-branch pasting
@@ -153,8 +167,10 @@ alias y1d='e1d | y' 								# yank one dir
 alias y.d='e.d | y' 								# yank this dir
 alias y1f='1f | y' 									# yank file
 alias y.v='e.v | y' 								# yank this version
+alias yv='y.v' 										# yank this version
 alias y.c='e.c | y' 								# yank this commit message
-
+alias y.r='e.r | y' 								# yank this repo name
+alias yr='y.r'
 
 ### Sublime
 alias z1f='z `e1f`' # sublime one file from ~
@@ -181,4 +197,15 @@ alias Zp='Z `p`' # sudo sublime pasting
 
 alias dt='git difftool'
 alias s='git status'
+alias st='git status'
 alias d='git --no-pager diff'
+alias mt='git mt '
+alias hard='git reset --hard'
+alias hardo='git reset --hard origin/`e.b`'
+
+
+alias dp='depend `p`' # Depend on pasting, hopefully a repo name
+alias bb='git co -' # branch back
+alias gp='git push -u' # git push
+
+
