@@ -208,4 +208,5 @@ alias dp='depend `p`' # Depend on pasting, hopefully a repo name
 alias bb='git co -' # branch back
 alias gp='git push -u' # git push
 
-
+alias dto='dt origin/`e.b`'
+alias gs='git status'
