@@ -164,7 +164,7 @@ public class Build {
                 ),
                 Noun.of("r", "repo(s)",
                         Optional.of("1r"),
-                        Optional.of("echo 'this repo' not implemented."),
+                        Optional.of("__looklet_github_repository_name"),
                         Optional.empty(),
                         Optional.of("__johan_aliases_all_repos")
                         )
