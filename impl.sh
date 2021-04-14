@@ -27,7 +27,7 @@ function __johan_aliases_open {
 function __johan_aliases_set_version {
     # TODO: not only for looklet
     # TODO: support for more languages, for now only maven
-    __looklet_maven_version
+    __looklet_maven_version "${@}"
 }
 
 function __johan_aliases_get_all_branches {
