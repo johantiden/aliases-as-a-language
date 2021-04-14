@@ -22,6 +22,7 @@ import static java.lang.System.lineSeparator;
 
 public class Build {
 
+    private static final Logger log = LoggerFactory.getLogger(Build.class);
     public static final String FORMAT_OUT = "bin/%s";
 
     private static class Word {
