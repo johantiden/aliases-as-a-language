@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+git branch --all \
+  | sed 's/[ \\*]*//g' \
+  | sed 's/remotes\/origin\///g' \
+  | grep -v HEAD \
+  | sort \
+  | uniq

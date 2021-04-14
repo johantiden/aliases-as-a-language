@@ -30,10 +30,6 @@ function __aaal_set_version {
     __looklet_maven_version "${@}"
 }
 
-function __aaal_get_all_branches {
-    git branch --all | sed 's/[ \\*]*//g' | sed 's/remotes\/origin\///g' | grep -v HEAD | sort | uniq
-}
-
 function __aaal_choose_branch {
     BRANCHES=`__aaal_get_all_branches`
     echo "$BRANCHES" | fzf
