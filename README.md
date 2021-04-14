@@ -12,6 +12,10 @@ A cool name is needed to make this go viral! Maybe vish - vi-like shell?
 # Usage
 Clone this repository and source the `aliases-as-a-language.sh` file into you .bashrc or similar.
 
+e.g.
+
+`[ -f ~/git/aliases-as-a-language/aliases-as-a-language.sh ] && source ~/git/aliases-as-a-language/aliases-as-a-language.sh
+`
 
 # Language
 ## Verbs:
@@ -48,11 +52,11 @@ Clone this repository and source the `aliases-as-a-language.sh` file into you .b
 
 * `.` local - Determines which item from context in contrast to `1` which needs user 
     * `y.d` "yank this dir"
-	* `.t` text row (search under .)
-	* `.f` 
+    * `.t` text row (search under .)
+    * `.f` 
 
 * Combining `1.` search here. 
-	* `1.f` one local file (search under .) 
+    * `1.f` one local file (search under .) 
 
 * `d1f`   dir of one file        (kind of breaks grammar)
 * `d1F`   sudo dir of one file   (kind of breaks grammar)
@@ -63,8 +67,8 @@ Clone this repository and source the `aliases-as-a-language.sh` file into you .b
     * `njp`      "new branch, jira-pasting"
 * `g`     git as an adjective
     * `og1v`        "open a git version" - open here, to mean open github. git can usually be derived from context so it may now be needed. "e.v" - echo this version can be safely assumed to be a git version, so it should behave the same as "eg.v"
-* `e` 	exact. this instructs searches to use exact matching isntead of fuzzy search, which is defautl
-	* e.g. `o1ef` "open one exact file"
+* `e` exact. this instructs searches to use exact matching isntead of fuzzy search, which is defaut
+    * e.g. `o1ef` "open one exact file"
 
 # Grammar
 * Verb alone expects an argument eg "e hej"
