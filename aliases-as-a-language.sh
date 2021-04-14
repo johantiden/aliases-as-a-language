@@ -4,6 +4,7 @@ thisDirectory=$(dirname $0)
 source $thisDirectory/impl.sh
 
 export PATH=$thisDirectory/bin:$PATH
+export PATH=$thisDirectory/generated:$PATH
 
 # Verbs
 #########################

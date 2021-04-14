@@ -23,7 +23,8 @@ import static java.lang.System.lineSeparator;
 public class Build {
 
     private static final Logger log = LoggerFactory.getLogger(Build.class);
-    public static final String FORMAT_OUT = "bin/%s";
+    public static final String GENERATED = "generated";
+    public static final String FORMAT_OUT = GENERATED + "/%s";
 
     private static class Word {
         private final String command;
@@ -44,8 +45,8 @@ public class Build {
     }
 
     public static void main(String[] args) throws IOException {
-        Path binFolder = new File("bin").toPath();
-        Files.list(binFolder)
+        Path generatedFolder = new File(GENERATED).toPath();
+        Files.list(generatedFolder)
                 .forEach(file -> {
                     log.info("deleting {}", file);
                     try {
