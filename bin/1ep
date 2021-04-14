@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ":  one exact (auto)pasting(s)"
 
-clipL | __johan_aliases_one_exact
+clipL | __aaal_one_exact

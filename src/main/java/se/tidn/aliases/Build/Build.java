@@ -98,7 +98,7 @@ public class Build {
 //                Word.of("g","get"),
 //                Word.of("m","merge"),
                 Verb.of("o","open \"${@}\"",
-                        Optional.of("__johan_aliases_open \"${@}\""),
+                        Optional.of("__aaal_open \"${@}\""),
                         Optional.of("o \"$(%s)\""),
                         Optional.of("%s | xargs o")),
 
@@ -145,7 +145,7 @@ public class Build {
                         Optional.of("1b"),
                         Optional.of("git rev-parse --abbrev-ref HEAD"),
                         Optional.empty(),
-                        Optional.of("__johan_aliases_get_all_branches")),
+                        Optional.of("__aaal_get_all_branches")),
 //                Word.of("d", "directory~"),
 //                Word.of("D", "directory/"),
 //                Word.of("d", "develop"),
@@ -153,7 +153,7 @@ public class Build {
                         Optional.of("1f"),
                         Optional.empty(),
                         Optional.empty(),
-                        Optional.of("__johan_aliases_list_all_files_from_home")),
+                        Optional.of("__aaal_list_all_files_from_home")),
 //                Word.of("F", "file/"),
 //                Word.of("m", "master"),
                 Noun.of("p", "pasting(s)",
@@ -166,7 +166,7 @@ public class Build {
                         Optional.of("1r"),
                         Optional.of("__looklet_github_repository_name"),
                         Optional.empty(),
-                        Optional.of("__johan_aliases_all_repos")
+                        Optional.of("__aaal_all_repos")
                         )
 //                Word.of("v", "version"),
 //                Word.of("t", "text-line~"),
@@ -181,7 +181,7 @@ public class Build {
                         "(auto)" + noun.getDescription(),
                         Optional.empty(),
                         Optional.empty(),
-                        Optional.of(noun.implAll.get() + " | __johan_aliases_one"),
+                        Optional.of(noun.implAll.get() + " | __aaal_one"),
                         Optional.empty()
                 ))
                 .collect(Collectors.toList());
@@ -193,7 +193,7 @@ public class Build {
                         "exact (auto)" + noun.getDescription(),
                         Optional.empty(),
                         Optional.empty(),
-                        Optional.of(noun.implAll.get() + " | __johan_aliases_one_exact"),
+                        Optional.of(noun.implAll.get() + " | __aaal_one_exact"),
                         Optional.empty()
                 ))
                 .collect(Collectors.toList());

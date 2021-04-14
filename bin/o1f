@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": open "${@}" one (auto)file(s)~"
 
-o "$(__johan_aliases_list_all_files_from_home | __johan_aliases_one)"
+o "$(__aaal_list_all_files_from_home | __aaal_one)"

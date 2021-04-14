@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": open "${@}" one (auto)branch(es)"
 
-o "$(__johan_aliases_get_all_branches | __johan_aliases_one)"
+o "$(__aaal_get_all_branches | __aaal_one)"

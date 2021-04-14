@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": (sudo)sublime one (auto)repo(s)"
 
-z "$(__johan_aliases_all_repos | __johan_aliases_one)"
+z "$(__aaal_all_repos | __aaal_one)"
