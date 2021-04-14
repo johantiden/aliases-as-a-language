@@ -274,6 +274,7 @@ public class Build {
 
         try {
             final Path path = new File(String.format(FORMAT_OUT, command)).toPath();
+            log.info("writing {}", path);
             Set<PosixFilePermission> ownerWritable = PosixFilePermissions.fromString("rwxrwxr-x");
             FileAttribute<?> permissions = PosixFilePermissions.asFileAttribute(ownerWritable);
             Files.deleteIfExists(path);
