@@ -1,7 +1,11 @@
 package se.tidn.aliases.Build;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileAttribute;
@@ -38,7 +42,18 @@ public class Build {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Path binFolder = new File("bin").toPath();
+        Files.list(binFolder)
+                .forEach(file -> {
+                    log.info("deleting {}", file);
+                    try {
+                        Files.delete(file);
+                    } catch (IOException e) {
+                        throw new UncheckedIOException(e);
+                    }
+                });
+
         List<Verb> verbs = getVerbs();
         List<Noun> allNouns = getNouns();
 
