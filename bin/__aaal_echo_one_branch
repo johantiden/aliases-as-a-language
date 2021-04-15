@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+
+__aaal_get_all_branches | fzf

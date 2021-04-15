@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+# TODO: ~/git is hardcoded. '~' would be nice as root but a lot of false positives pop up, and it's slow.
+find ~/git -type d -exec test -e '{}/.git' ';' -print -prune
+#find ~/git/looklet -maxdepth 1 -mindepth 1 -type d -printf '%f\n'

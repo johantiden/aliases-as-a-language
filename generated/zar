@@ -5,6 +5,6 @@ __debugecho ": sublime "${@}" all repo(s)"
 
 count=$(__aaal_all_repos | wc -l)
 
-if ask "Count is $count, continue?" Y; then
+if __aaal_ask "Count is $count, continue?" Y; then
   __aaal_all_repos | xargs z
 fi;

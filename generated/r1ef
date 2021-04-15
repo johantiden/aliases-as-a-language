@@ -9,7 +9,7 @@ if [[ -z "$target" ]]; then
   exit 0;
 fi
 
-if ask "'rm $target', continue?" N; then
+if __aaal_ask "'rm $target', continue?" N; then
   #rm $target
   echo DRYRUN: rm $target
 fi;

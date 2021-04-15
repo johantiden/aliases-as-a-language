@@ -107,8 +107,8 @@ public class Build {
 //                Word.of("v","(set)version"),
 //                Word.of("u","up"),
                 Verb.of("y","yank",
-                        Optional.of("echo \"${@}\" | clipS"),
-                        Optional.of("\"$(%s)\" | clipS"),
+                        Optional.of("echo \"${@}\" | __aaal_clip_save"),
+                        Optional.of("\"$(%s)\" | __aaal_clip_save"),
                         Optional.empty()
                 ),
                 Verb.of("z","sublime \"${@}\"",
@@ -130,7 +130,7 @@ public class Build {
                 + "  exit 0;\n"
                 + "fi\n"
                 + "\n"
-                + "if ask \"'rm $target', continue?\" N; then\n"
+                + "if __aaal_ask \"'rm $target', continue?\" N; then\n"
                 + "  #rm $target\n"
                 + "  echo DRYRUN: rm $target\n"
                 + "fi;");
@@ -158,10 +158,10 @@ public class Build {
 //                Word.of("F", "file/"),
 //                Word.of("m", "master"),
                 Noun.of("p", "pasting(s)",
-                        Optional.of("clipL"),
-                        Optional.of("clipL"),
-                        Optional.of("clipL"),
-                        Optional.of("clipL")
+                        Optional.of("__aaal_clip_load"),
+                        Optional.of("__aaal_clip_load"),
+                        Optional.of("__aaal_clip_load"),
+                        Optional.of("__aaal_clip_load")
                 ),
                 Noun.of("r", "repo(s)",
                         Optional.of("1r"),
@@ -223,7 +223,7 @@ public class Build {
                 noun.getImplAll()
                         .map(nounForAll -> {
                                 String inner = String.format(verbForMany, nounForAll);
-                                return "count=$("+nounForAll+" | wc -l)\n\nif ask \"Count is $count, continue?\" Y; then\n  "+inner+"\nfi;";
+                                return "count=$("+nounForAll+" | wc -l)\n\nif __aaal_ask \"Count is $count, continue?\" Y; then\n  "+inner+"\nfi;";
                             }));
     }
 

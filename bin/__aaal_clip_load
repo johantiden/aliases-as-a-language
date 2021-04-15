@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+xclip -selection c -o \
+    | xargs -0 echo

@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 thisDirectory=$(dirname $0)
 source $thisDirectory/impl.sh
@@ -11,7 +11,7 @@ export PATH=$thisDirectory/generated:$PATH
 alias b='__aaal_git_checkout_contextual '
 alias c='__aaal_git_commit '
 alias p='ep'
-alias y='clipS'
+alias y='__aaal_clip_save'
 alias v='__aaal_set_version '
 
 # Nouns
@@ -55,7 +55,7 @@ alias b1b='b `e1b`'								# branch one branch
 alias gcp='c $(p)'								# commit pasting (as message)
 
 ### Echo
-alias e1b='__aaal_choose_branch'				# echo branch
+alias e1b='__aaal_echo_one_branch'				# echo branch
 alias e.b='git branch --show-current '  		# echo this branch
 alias eb='e.b'				# echo branch
 alias .b='e.b'  								# echo this branch
@@ -196,6 +196,7 @@ alias Zp='Z `p`' # sudo sublime pasting
 
 ## TODO
 
+alias r='. __aaal_r_sourceme'
 alias dt='git difftool'
 alias s='git status'
 alias st='git status'

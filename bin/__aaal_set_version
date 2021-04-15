@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+# TODO: not only for looklet
+# TODO: support for more languages, for now only maven
+__looklet_maven_version "${@}"

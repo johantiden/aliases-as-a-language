@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+
+# TODO: De-duplicate from __aaal_t_fuzzy
+FILE_AND_LINE=$(ag --nobreak --noheading . ~ | fzf -e --preview='t_preview {}')
+if [[ -n "${FILE_AND_LINE}" ]]; then
+    FILE=$(sed 's/:.*//g' <<< $FILE_AND_LINE)
+    let LINE=$(sed -e 's/.*:\(.*\):.*/\1/' <<< $FILE_AND_LINE)
+
+    if [[ ! -z "${FILE}" ]] ; then
+        #vim +$LINE $FILE
+        #vim "+normal $(LINE)G|" $FILE
+        echo $FILE $LINE
+    fi
+else
+    echo abort
+fi

@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": sublime "${@}" one pasting(s)"
 
-z "$(clipL)"
+z "$(__aaal_clip_load)"

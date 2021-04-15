@@ -5,14 +5,14 @@ __debugecho ": remove all branch(es)"
 
 count=$(__aaal_get_all_branches | wc -l)
 
-if ask "Count is $count, continue?" Y; then
+if __aaal_ask "Count is $count, continue?" Y; then
   target=$(__aaal_get_all_branches);
 if [[ -z "$target" ]]; then
   __debugecho abort
   exit 0;
 fi
 
-if ask "'rm $target', continue?" N; then
+if __aaal_ask "'rm $target', continue?" N; then
   #rm $target
   echo DRYRUN: rm $target
 fi;

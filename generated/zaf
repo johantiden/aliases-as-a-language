@@ -5,6 +5,6 @@ __debugecho ": sublime "${@}" all file(s)~"
 
 count=$(__aaal_list_all_files_from_home | wc -l)
 
-if ask "Count is $count, continue?" Y; then
+if __aaal_ask "Count is $count, continue?" Y; then
   __aaal_list_all_files_from_home | xargs z
 fi;
