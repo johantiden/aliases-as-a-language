@@ -82,8 +82,9 @@ alias e1et='__aaal_t_exact'						# echo file and row, exact
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
 alias ed1F='dirname `e1F`'						# echo dir of one file from /
 alias e.d='pwd'
-alias ep='clipL'								# echo pasting
+alias ep='__aaal_clip_load'								# echo pasting
 alias e.v='__aaal_get_version ' 	    		# echo this version
+alias .v='e.v ' 	    		# echo this version
 alias e.r='__looklet_github_repository_name'
 alias .r='e.r'
 
@@ -201,6 +202,7 @@ alias dt='git difftool'
 alias s='git status'
 alias st='git status'
 alias d='git --no-pager diff'
+alias .d='pwd'
 alias mt='git mt '
 alias hard='git reset --hard'
 alias hardo='git reset --hard origin/`e.b`'
@@ -210,5 +212,5 @@ alias dp='depend `p`' # Depend on pasting, hopefully a repo name
 alias bb='git co -' # branch back
 alias gp='git push -u' # git push
 
-alias dto='dt origin/`e.b`'
+alias dto='dt origin/`.b`'
 alias gs='git status'
