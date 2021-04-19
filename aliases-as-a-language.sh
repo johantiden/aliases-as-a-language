@@ -213,4 +213,5 @@ alias bb='git co -' # branch back
 alias gp='git push -u' # git push
 
 alias dto='dt origin/`.b`'
+alias dtod='dt origin/develop'
 alias gs='git status'
