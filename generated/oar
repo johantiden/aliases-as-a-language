@@ -3,8 +3,9 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": open "${@}" all repo(s)"
 
-count=$(__aaal_all_repos | wc -l)
+lines=$(__aaal_all_repos)
+count=$(echo "${lines}" | wc -l)
 
 if __aaal_ask "Count is $count, continue?" Y; then
-  __aaal_all_repos | xargs o
+    echo "${lines}" | xargs o
 fi;

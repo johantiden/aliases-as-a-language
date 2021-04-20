@@ -200,7 +200,6 @@ alias Zp='Z `p`' # sudo sublime pasting
 alias r='. __aaal_r_sourceme'
 alias dt='git difftool'
 alias s='git status'
-alias st='git status'
 alias d='git --no-pager diff'
 alias .d='pwd'
 alias mt='git mt '

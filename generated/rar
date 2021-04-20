@@ -3,10 +3,11 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": remove all repo(s)"
 
-count=$(__aaal_all_repos | wc -l)
+lines=$(__aaal_all_repos)
+count=$(echo "${lines}" | wc -l)
 
 if __aaal_ask "Count is $count, continue?" Y; then
-  target=$(__aaal_all_repos);
+    target=$(echo "${lines}");
 if [[ -z "$target" ]]; then
   __debugecho abort
   exit 0;

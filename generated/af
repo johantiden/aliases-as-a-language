@@ -3,8 +3,9 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ":  all file(s)~"
 
-count=$(__aaal_list_all_files_from_home | wc -l)
+lines=$(__aaal_list_all_files_from_home)
+count=$(echo "${lines}" | wc -l)
 
 if __aaal_ask "Count is $count, continue?" Y; then
-  __aaal_list_all_files_from_home
+    echo "${lines}"
 fi;

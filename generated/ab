@@ -3,8 +3,9 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ":  all branch(es)"
 
-count=$(__aaal_get_all_branches | wc -l)
+lines=$(__aaal_get_all_branches)
+count=$(echo "${lines}" | wc -l)
 
 if __aaal_ask "Count is $count, continue?" Y; then
-  __aaal_get_all_branches
+    echo "${lines}"
 fi;

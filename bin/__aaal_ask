@@ -4,9 +4,6 @@ set -e
 
 #https://gist.github.com/davejamesmiller/1965569#file-ask-sh
 
-
-prompt default reply
-
 if [[ ${2:-} = 'Y' ]]; then
     prompt='Y/n'
     default='Y'
@@ -33,8 +30,8 @@ while true; do
 
     # Check if the reply is valid
     case "$reply" in
-        Y*|y*) return 0 ;;
-        N*|n*) return 1 ;;
+        Y*|y*) exit 0 ;;
+        N*|n*) exit 1 ;;
     esac
 
 done

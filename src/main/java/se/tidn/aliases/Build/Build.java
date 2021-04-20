@@ -222,8 +222,20 @@ public class Build {
         return verb.implForMany.flatMap(verbForMany ->
                 noun.getImplAll()
                         .map(nounForAll -> {
-                                String inner = String.format(verbForMany, nounForAll);
-                                return "count=$("+nounForAll+" | wc -l)\n\nif __aaal_ask \"Count is $count, continue?\" Y; then\n  "+inner+"\nfi;";
+                                String template =
+                                    """
+                                    lines=$(%s)
+                                    count=$(echo "${lines}" | wc -l)
+                                    
+                                    if __aaal_ask "Count is $count, continue?" Y; then
+                                        %s
+                                    fi;
+                                    """;
+
+                                String inner = String.format(verbForMany, "echo \"${lines}\"");
+                                String code = template.formatted(nounForAll, inner);
+
+                                return code;
                             }));
     }
 
