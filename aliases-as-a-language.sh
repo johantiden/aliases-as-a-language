@@ -193,6 +193,7 @@ alias z1et='__aaal_z1et'
 alias zp='z `p`' # sublime pasting
 alias Zp='Z `p`' # sudo sublime pasting
 
+alias x='z -nw'
 
 
 ## TODO
