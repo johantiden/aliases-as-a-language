@@ -47,7 +47,9 @@ alias ev='e.v'
 #########################
 ### Branch
 alias bd='b develop'							# branch develop
-alias bm='b master'								# branch master
+alias bm='b `__looklet_git_main_branch`'		# branch main/master
+
+
 alias bp='b $(p)'								# branch pasting
 alias b1b='b `e1b`'								# branch one branch
 

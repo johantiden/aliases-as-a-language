@@ -2,4 +2,14 @@
 set -e
 
 # TODO: copy paste looklet solution to make this standalone
-__looklet_xpath_pom_version
+
+if command -v __looklet_xq_pom_version &> /dev/null; then
+	__looklet_xq_pom_version
+	exit
+fi
+
+if command -v __looklet_xpath_pom_version &> /dev/null; then
+	__looklet_xpath_pom_version
+	exit
+fi
+
