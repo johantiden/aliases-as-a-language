@@ -92,7 +92,6 @@ alias .r='e.r'
 
 
 ### Get
-alias g='gg'				#get
 alias g1d='cd `e1d`' 		#get one dir
 alias gd='bd' 				#get develop
 alias gg='git pull' 		#get git
@@ -128,7 +127,9 @@ alias o1F='o `e1F`'				#open one file from /
 alias o1eF='o `e1eF`'			#open one file from /, exact
 alias of='o1f'					#open one file from ~
 alias og='pr'					#open git
-alias op='o $(p)'				#open pasting
+
+# conflict with one password :(
+#alias op='o $(p)'				#open pasting
 
 ### "See"
 

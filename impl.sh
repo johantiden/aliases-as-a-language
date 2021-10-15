@@ -115,10 +115,10 @@ function __aaal_open_github {
 }
 
 function __aaal_z1t {
-    __aaal_t_fuzzy | sed -e "s/ /:/g" | xargs echo | xargs subl
+    __aaal_t_fuzzy | sed -e "s/ /:/g" | xargs echo | xargs vi
 }
 
 function __aaal_z1et {
-    __aaal_t_exact | sed -e "s/ /:/g" | xargs echo | xargs subl
+    __aaal_t_exact | sed -e "s/ /:/g" | xargs echo | xargs vi
 }
 
