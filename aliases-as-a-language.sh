@@ -121,28 +121,7 @@ alias og='pr'					#open git
 ### "See"
 
 # See pasting
-alias catp='johan_view_pasting'
 alias c1f='cccat `e1f`'
-
-
-### Remove
-alias r1b='brm $(e1b)' 	#remove one branch
-alias r.b='echo not implemented' 	#remove this branch
-alias r.d='echo not implemented'	#remove this dir
-alias r1d='echo not implemented'	#remove one dir
-alias r1D='echo not implemented' 	#remove one sudo dir
-alias r1.d='echo not implemented'	#remove this dir
-alias rd1f='echo not implemented'	#remove dir of one file
-alias rd1F='echo not implemented'	#remove dir of one sudo file
-alias r1F='rm $(e1F)'				#remove one sudo file
-
-alias rd='echo remove develop not allowed'
-alias r.v='echo remove this version does not make sense'
-alias r.c='echo not implemented. hmm maybe' # Maybe "git reset HEAD^" ?
-
-### Version
-alias vp='v $(p)' # version pasting
-
 
 ### Yank
 alias yb='y.b' 										# yank branch
