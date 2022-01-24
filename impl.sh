@@ -92,7 +92,7 @@ function __aaal_choose_one_file_from_root_exact {
 }
 
 function __aaal_git_commit {
-    __looklet_git_commit "${@}"
+    echo "TODO: __aaal_git_commit"
 }
 
 function __aaal_open_github {
