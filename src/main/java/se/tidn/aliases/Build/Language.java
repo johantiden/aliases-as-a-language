@@ -53,6 +53,7 @@ public class Language {
                 .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, Noun.PASTING)))
                 .filter(sentence -> !(contains(sentence, Sentence.of(Verb.YANK.word, Noun.PASTING.word))))
                 .filter(sentence -> !(contains(sentence, Sentence.of(Verb.YANK.word, Quantifier.ALL.word, Noun.PASTING.word))))
+                .filter(sentence -> !sentence.command.equals("r")) // remove 'repo' and 'remove' to avoid duplicate.
                 .collect(Collectors.toList());
     }
 
@@ -147,9 +148,10 @@ public class Language {
     }
 
     enum Verb {
-        OPEN(Sentence.of("o", "open")),
-        YANK(Sentence.of("y", "yank")),
         EDIT(Sentence.of("z", "edit")),
+        OPEN(Sentence.of("o", "open")),
+        REMOVE(Sentence.of("r", "remove")),
+        YANK(Sentence.of("y", "yank")),
         XEDIT(Sentence.of("x", "xedit")),
         ;
 

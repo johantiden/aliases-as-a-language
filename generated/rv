@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove version"
+
+echo "TODO: implement command 'rv' in aliases-as-a-language"

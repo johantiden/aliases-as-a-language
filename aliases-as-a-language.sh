@@ -134,6 +134,3 @@ alias dto='dt origin/`.b`'
 alias dod='d origin/develop'
 alias dtod='dt origin/develop'
 alias gs='git status'
-
-
-alias rp='r $(p)'					#repo pasting

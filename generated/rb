@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove branch"
+
+echo "TODO: implement command 'rb' in aliases-as-a-language"

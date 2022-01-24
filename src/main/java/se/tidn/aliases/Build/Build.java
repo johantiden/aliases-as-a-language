@@ -73,7 +73,6 @@ public class Build {
 
         implementations.put("1", Implementation.of("__aaal_fzf"));
 
-        implementations.put("r", Implementation.NONE);
         implementations.put("1r", Implementation.of("ar | 1"));
         implementations.put("ar", Implementation.of("__aaal_all_repos"));
         implementations.put(".r", Implementation.of("__aaal_this_repo"));
@@ -102,6 +101,18 @@ public class Build {
         implementations.put("oar", Implementation.of("goar"));
         implementations.put("o1r", Implementation.of("go1r"));
         implementations.put("o.r", Implementation.of("go.r"));
+
+        // Remove
+        implementations.put("rf", Implementation.of("r1f"));
+        putTodo(implementations, "rb"); // remove branch with parameter
+        putTodo(implementations, "r1p"); // try to guess what the pasting contains
+        putTodo(implementations, "rp"); // try to guess what the pasting contains
+        putTodo(implementations, "rv");
+        putTodo(implementations, "r1v");
+        putTodo(implementations, "r.v");
+        implementations.put("r1f", Implementation.of("rm `1f`"));
+        putTodo(implementations, "r1b");
+        putTodo(implementations, "r.b");
 
         // Yank
         implementations.put("yf", Implementation.of("y1f"));
@@ -157,6 +168,14 @@ public class Build {
         // These make sense but are blocked for other reasons (e.g. too dangerous)
         implementations.put("oaf", Implementation.NONE);
         implementations.put("yaf", Implementation.NONE);
+        implementations.put("rr", Implementation.NONE);
+        implementations.put("raf", Implementation.NONE);
+        implementations.put("rab", Implementation.NONE);
+        implementations.put("rap", Implementation.NONE);
+        implementations.put("rar", Implementation.NONE);
+        implementations.put("rav", Implementation.NONE);
+        implementations.put("r1r", Implementation.NONE);
+        implementations.put("r.r", Implementation.NONE);
         return implementations;
     }
 
