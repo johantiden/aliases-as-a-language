@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": github yank exact file"
+
+echo "TODO: implement command 'gyef' in aliases-as-a-language

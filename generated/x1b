@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": xedit one branch"
+
+echo "TODO: implement command 'x1b' in aliases-as-a-language

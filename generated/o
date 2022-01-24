@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": open "${@}""
+__debugecho ": open"
 
-__aaal_open "${@}"
+echo "TODO: implement command 'o' in aliases-as-a-language

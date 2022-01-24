@@ -9,11 +9,12 @@ HELP WANTED!
 
 A cool name is needed to make this go viral! Maybe vish - vi-like shell?
 
-# Usage
-Clone this repository and source the `aliases-as-a-language.sh` file into you .bashrc or similar.
+# Installation
+
+- Clone this repository
+- source the `aliases-as-a-language.sh` file into you .bashrc or similar.
 
 e.g.
-
 `[ -f ~/git/aliases-as-a-language/aliases-as-a-language.sh ] && source ~/git/aliases-as-a-language/aliases-as-a-language.sh
 `
 
@@ -28,23 +29,21 @@ e.g.
 * `r`     remove (contextual)
 * `v`     version
 * `y`     yank (as in vim)
-* `z`     sublime
-* `Z`     sudo sublime
-* `.n`    git new
+* `z`     open editor
+* `x`     open editor (gui)
+* `n`    git new
 
 ## Nouns
 * `b` branch
 * `c` commit (message)
 * `d` directory
 * `d` develop (only contextual)
-* `D` more directory
 * `f` file (search under ~)
-* `F` file (search under /)
-* `m` master (only contextual)
+* `m` main branch (only contextual)
 * `p` pasting (like vim)
-* `v` version
+* `r` (git) repo
 * `t` text row (search under ~)
-* `T` text row (search under /)
+* `v` version
 
 ## Special
 * `1` one - One should be selected. Where to choose from depends on context, especially the NOUN. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
@@ -52,8 +51,8 @@ e.g.
 
 * `.` local - Determines which item from context in contrast to `1` which needs user 
     * `y.d` "yank this dir"
-    * `.t` text row (search under .)
-    * `.f` 
+    * `.t` text row (search in this directory .)
+    * `.r` "this repo"
 
 * Combining `1.` search here. 
     * `1.f` one local file (search under .) 
@@ -61,20 +60,31 @@ e.g.
 * `d1f`   dir of one file        (kind of breaks grammar)
 * `d1F`   sudo dir of one file   (kind of breaks grammar)
 
-## Adjectives
-* `j`     jira as an adjective
-    * `oj.v`     "open jira, this-version"
+## Context
+Context can be given at the beginning of the sentence or before a noun. Usage before a 
+
+* `j`     jira
+    * `jo.v`     "jira: open this version"
     * `njp`      "new branch, jira-pasting"
-* `g`     git as an adjective
-    * `og1v`        "open a git version" - open here, to mean open github. git can usually be derived from context so it may now be needed. "e.v" - echo this version can be safely assumed to be a git version, so it should behave the same as "eg.v"
-* `e` exact. this instructs searches to use exact matching isntead of fuzzy search, which is defaut
-    * e.g. `o1ef` "open one exact file"
+
+
+* `g`     git
+    * `go1v`        "git: open a version" - open to mean open github. git can usually be derived from context, so it may not be needed. e.v" - echo this version can be safely assumed to be a git version, so it should behave the same as "eg.v"
+
+
+* `e` exact. this instructs searches to use exact matching instead of fuzzy search. fuzzy is default
+    * `o1ef` "open one exact file"
+
+
+* `s` sudo. This will typically change the context from "home" to "everywhere".
+    * `se1f`  "sudo: echo one file (from `/`)" - This is to distinguish from the default `e1f` which means "echo one file from `~`" 
+
 
 # Grammar
 * Verb alone expects an argument eg "e hej"
 
 * Behavior from noun alone depends on context. 
-    *`f` will will echo the file. 
+    *`f` will echo the file. 
     *`1d` will cd to a directory.
 
 * Some verbs are contextual.
@@ -90,3 +100,19 @@ e.g.
 *NOTE: SOME VERBS ARE ALSO NOUNS! 
     *`cp` will commit with the clipboard contents as message. 
     *`yc` will yank the latest commit message. 
+
+# Contributing
+
+You can check out the code and build it yourself. The build system is a little java program designed to generate a bunch of commands that will be put on the PATH.
+
+## Prerequisistes
+- Java 17
+- Maven
+
+Run the generator by executing the java class predefined in the pom file:
+```
+mvn clean compile exec:java
+```
+This will replace all the files in the `./generated/` folder. Both the code changes and the newly generated commands should be committed to git.
+
+This repo is meant to be heavily changed to personal taste using forks but if you think your changes are of value here, please make a Pull Request!

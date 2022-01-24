@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-__aaal_all_repos | __aaal_fzf

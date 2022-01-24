@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-source "$(dirname $0)/../impl.sh"
-__debugecho ": (sudo)sublime one pasting(s)"
-
-z "$(__aaal_clip_load)"

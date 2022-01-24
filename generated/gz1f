@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": github edit one file"
+
+echo "TODO: implement command 'gz1f' in aliases-as-a-language

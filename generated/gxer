@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": github xedit exact repo"
+
+echo "TODO: implement command 'gxer' in aliases-as-a-language

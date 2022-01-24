@@ -58,7 +58,6 @@ alias gcp='c $(p)'								# commit pasting (as message)
 
 ### Echo
 alias e1b='__aaal_echo_one_branch'				# echo branch
-alias e.b='git branch --show-current '  		# echo this branch
 alias eb='e.b'				# echo branch
 alias .b='e.b'  								# echo this branch
 alias e.c='git --no-pager log -n1 --pretty=format:"%s"'	# echo this commit message
@@ -159,8 +158,8 @@ alias r.c='echo not implemented. hmm maybe' # Maybe "git reset HEAD^" ?
 
 
 ### Up
-alias u='git push'					#up
-alias ug='git push'					#up git
+#alias u='git push'					#up
+#alias ug='git push'					#up git
 
 
 ### Version
