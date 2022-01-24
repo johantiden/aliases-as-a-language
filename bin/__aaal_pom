@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+attempts=0
+directory="$(pwd)"
+while [[ "${attempts}" -lt 10 ]]; do
+    let attempts+=1
+
+    pom="${directory}/pom.xml"
+
+    if [[ -f "${pom}" ]]; then
+        echo "${pom}"
+        exit 0
+    fi
+
+    directory="$(dirname "${directory}")"
+    if [[ "${directory}" == "/" ]]; then
+        exit 0
+    fi
+done
+

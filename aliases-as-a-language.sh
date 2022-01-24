@@ -39,14 +39,12 @@ alias x1='dmenu '
 #########################
 alias 1b='g1b'
 alias t='e1t'
-alias et='eet'
-alias ev='e.v'
 
 # Sentences
 #########################
 ### Branch
 alias bd='b develop'							# branch develop
-alias bm='b `__looklet_git_main_branch`'		# branch main/master
+alias bm='b `__aaal_git_main_branch`'		# branch main/master
 
 
 alias bp='b $(p)'								# branch pasting
@@ -70,11 +68,6 @@ alias et='__aaal_t_exact'						# echo file and row, exact
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
 alias ed1F='dirname `e1F`'						# echo dir of one file from /
 alias e.d='pwd'
-alias e.v='__aaal_get_version ' 	    		# echo this version
-alias .v='e.v ' 	    		# echo this version
-alias e.r='__looklet_github_repository_name'
-alias .r='e.r'
-
 
 ### Get
 alias g1d='cd `e1d`' 		#get one dir
@@ -128,7 +121,6 @@ alias y1b='e1b | y' 								# yank this branch
 alias y1d='e1d | y' 								# yank one dir
 alias y.d='e.d | y' 								# yank this dir
 alias y1f='1f | y' 									# yank file
-alias y.v='e.v | y' 								# yank this version
 alias yv='y.v' 										# yank this version
 alias y.c='e.c | y' 								# yank this commit message
 alias y.r='e.r | y' 								# yank this repo name

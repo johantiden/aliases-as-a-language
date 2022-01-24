@@ -67,14 +67,14 @@ public class Build {
         implementations.put("v", Implementation.of(".v")); // TODO: implement setter if argument present
         implementations.put("1v", Implementation.of("av | 1"));
         putTodo(implementations, "av"); // list all tags
-        putTodo(implementations, ".v");
+        implementations.put(".v", Implementation.of("__aaal_get_version"));
 
         implementations.put("1", Implementation.of("__aaal_fzf"));
 
         implementations.put("r", Implementation.NONE);
         implementations.put("1r", Implementation.of("ar | 1"));
         implementations.put("ar", Implementation.of("__aaal_all_repos"));
-        implementations.put(".r", Implementation.of("__looklet_github_repository_name"));
+        implementations.put(".r", Implementation.of("__aaal_this_repo"));
 
         implementations.put("p", Implementation.of("__aaal_clip_load"));
         implementations.put("ap", Implementation.of("p"));
