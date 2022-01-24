@@ -17,17 +17,17 @@ alias v='__aaal_set_version '
 # Nouns
 #########################
 alias 1d='cd `e1d`'
-alias 1ed='cd `e1ed`'
+alias ed='cd `eed`'
 alias 1D='cd `e1D`'
 alias d1f='cd `ed1f`'
 alias d1F='cd `ed1F`'
 alias f='1f'
 alias 1f='e1f'
-alias 1ef='e1ef'
+alias ef='eef'
 alias 1F='e1F'
-alias 1eF='e1eF'
+alias eF='eeF'
 alias 1t='e1t'
-alias 1et='e1et'
+alias et='eet'
 
 
 # Special
@@ -40,7 +40,7 @@ alias x1='dmenu '
 #########################
 alias 1b='g1b'
 alias t='e1t'
-alias et='e1et'
+alias et='eet'
 alias ev='e.v'
 
 # Sentences
@@ -56,29 +56,17 @@ alias b1b='b `e1b`'								# branch one branch
 ### Commit
 alias gcp='c $(p)'								# commit pasting (as message)
 
-### Echo
-alias e1b='__aaal_echo_one_branch'				# echo branch
-alias eb='e.b'				# echo branch
-alias .b='e.b'  								# echo this branch
-alias e.c='git --no-pager log -n1 --pretty=format:"%s"'	# echo this commit message
-
-alias e1f='__aaal_choose_one_file_from_home '	# echo one file from ~
-alias ef='e1f'
-
-# echo one exact file from ~
-alias e1ef='__aaal_choose_one_file_from_home_exact'
-
 # echo one file from /
-alias e1F='__aaal_choose_one_file_from_root'
+alias 1F='__aaal_choose_one_file_from_root'
 
 # echo one exact file from /
-alias e1eF='__aaal_choose_one_file_from_root_exact'
+alias eF='__aaal_choose_one_file_from_root_exact'
 
-alias e1d='find ~ -type d | fzf'				# echo dir from ~
-alias e1ed='find ~ -type d | fzf -e'			# echo dir from ~, exact
+alias 1d='find ~ -type d | fzf'				# echo dir from ~
+alias ed='find ~ -type d | fzf -e'			# echo dir from ~, exact
 alias e1D='sudo find / -type d | fzf'			# echo dir from /
 alias e1t='__aaal_t_fuzzy'						# echo file and row
-alias e1et='__aaal_t_exact'						# echo file and row, exact
+alias et='__aaal_t_exact'						# echo file and row, exact
 
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
 alias ed1F='dirname `e1F`'						# echo dir of one file from /
@@ -121,9 +109,9 @@ alias o.d='o .'				    #open this dir
 alias o.='o .'				    #open this dir
 alias oD='o `e1D`'				#open one dir from /
 alias o1f='o `e1f`'				#open one file from ~
-alias o1ef='o `e1ef`'			#open one file from ~, exact
+alias oef='o `eef`'			#open one file from ~, exact
 alias o1F='o `e1F`'				#open one file from /
-alias o1eF='o `e1eF`'			#open one file from /, exact
+alias oeF='o `eeF`'			#open one file from /, exact
 alias of='o1f'					#open one file from ~
 alias og='pr'					#open git
 
@@ -175,15 +163,13 @@ alias z1F='z `e1F`' # sublime one file from /
 alias Z1f='Z `e1f`' # sudo sublime one file from ~
 alias Z1F='Z `e1F`' # sudo sublime one file from /
 
-alias zef='z1ef'      # sublime one file from ~
-alias z1ef='z `e1ef`' # sublime one file from ~
-alias z1eF='z `e1eF`' # sublime one file from /
-alias Z1ef='Z `e1ef`' # sudo sublime one file from ~
-alias Z1eF='Z `e1eF`' # sudo sublime one file from /
+alias zef='z `eef`' # sublime one file from ~
+alias zeF='z `eeF`' # sublime one file from /
+alias Zef='Z `eef`' # sudo sublime one file from ~
+alias ZeF='Z `eeF`' # sudo sublime one file from /
 
 alias z1t='__aaal_z1t'
-alias zet='z1et'
-alias z1et='__aaal_z1et'
+alias zet='__aaal_zet'
 
 alias zp='z `p`' # sublime pasting
 alias Zp='Z `p`' # sudo sublime pasting
