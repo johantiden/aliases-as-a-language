@@ -271,6 +271,7 @@ public class Build {
         contents += "__debugecho \": " + description + "\"" + lineSeparator();
         contents += lineSeparator();
         contents += impl;
+        contents += lineSeparator();
         return contents;
     }
 }
