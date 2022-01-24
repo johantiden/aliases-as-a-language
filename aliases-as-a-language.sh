@@ -18,26 +18,12 @@ alias 1d='cd `e1d`'
 alias ed='cd `eed`'
 alias 1D='cd `e1D`'
 alias d1f='cd `ed1f`'
-alias d1F='cd `ed1F`'
 alias f='1f'
 alias 1f='e1f'
 alias ef='eef'
-alias 1F='e1F'
-alias eF='eeF'
 alias 1t='e1t'
 alias et='eet'
 
-
-# Special
-#########################
-alias 1='fzf '
-alias x1='dmenu '
-
-
-# Assumptions from context
-#########################
-alias 1b='g1b'
-alias t='e1t'
 
 # Sentences
 #########################
@@ -52,12 +38,6 @@ alias b1b='b `e1b`'								# branch one branch
 ### Commit
 alias gcp='c $(p)'								# commit pasting (as message)
 
-# echo one file from /
-alias 1F='__aaal_choose_one_file_from_root'
-
-# echo one exact file from /
-alias eF='__aaal_choose_one_file_from_root_exact'
-
 alias 1d='find ~ -type d | fzf'				# echo dir from ~
 alias ed='find ~ -type d | fzf -e'			# echo dir from ~, exact
 alias e1D='sudo find / -type d | fzf'			# echo dir from /
@@ -65,7 +45,6 @@ alias e1t='__aaal_t_fuzzy'						# echo file and row
 alias et='__aaal_t_exact'						# echo file and row, exact
 
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
-alias ed1F='dirname `e1F`'						# echo dir of one file from /
 alias e.d='pwd'
 
 ### Get
@@ -100,8 +79,6 @@ alias o.='o .'				    #open this dir
 alias oD='o `e1D`'				#open one dir from /
 alias o1f='o `e1f`'				#open one file from ~
 alias oef='o `eef`'			#open one file from ~, exact
-alias o1F='o `e1F`'				#open one file from /
-alias oeF='o `eeF`'			#open one file from /, exact
 alias of='o1f'					#open one file from ~
 alias og='pr'					#open git
 
@@ -127,14 +104,10 @@ alias yr='y.r'
 
 ### Sublime
 alias z1f='z `e1f`' # sublime one file from ~
-alias z1F='z `e1F`' # sublime one file from /
 alias Z1f='Z `e1f`' # sudo sublime one file from ~
-alias Z1F='Z `e1F`' # sudo sublime one file from /
 
 alias zef='z `eef`' # sublime one file from ~
-alias zeF='z `eeF`' # sublime one file from /
 alias Zef='Z `eef`' # sudo sublime one file from ~
-alias ZeF='Z `eeF`' # sudo sublime one file from /
 
 alias z1t='__aaal_z1t'
 alias zet='__aaal_zet'
