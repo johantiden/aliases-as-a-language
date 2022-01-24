@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove pasting"
+
+echo "TODO: implement command 'rp' in aliases-as-a-language"

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Output the name of the main branch.
+
+if [ `git --no-pager branch --remotes --list origin/main` ]; then
+    echo "main"
+elif [ `git --no-pager branch --remotes --list origin/master` ]; then
+    echo "master"
+else 
+    >&2 echo "Couldn't determine main branch, guessing 'main'"
+    echo "main"
+fi

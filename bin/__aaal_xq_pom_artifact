@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+FILE="${1}"
+__aaal_xq_pom ".project.artifactId" "${FILE}"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": sublime "${@}" one pasting(s)"
+__debugecho ": edit one pasting"
 
-z "$(__aaal_clip_load)"
+echo "TODO: implement command 'z1p' in aliases-as-a-language"

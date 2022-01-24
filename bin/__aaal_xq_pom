@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+JQ="${1}"
+FILE="${2}"
+if [[ "${FILE}" == "" ]]; then
+    FILE="$(__aaal_pom)"
+fi
+__aaal_xq "${JQ}" "${FILE}"

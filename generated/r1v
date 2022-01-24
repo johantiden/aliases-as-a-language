@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove one version"
+
+echo "TODO: implement command 'r1v' in aliases-as-a-language"

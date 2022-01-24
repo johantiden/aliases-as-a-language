@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": sublime "${@}" one (auto)file(s)~"
+__debugecho ": edit one file"
 
-z "$(__aaal_list_all_files_from_home | __aaal_one)"
+z `1f`

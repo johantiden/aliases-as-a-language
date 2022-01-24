@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-if [[ -z "${1}" ]] ; then
-    cd "`__aaal_echo_one_repo`"
+repo=$(1r)
+if [[ -z "${repo}" ]]; then
+    #echo "aborted ____aaal_r_sourceme"
+    :
 else
-    cd "${LOOKLET_TOOLS_PATH_CODE}/${1}"
+    cd "${repo}"
+    st # git status
 fi
-
-st # git status
 

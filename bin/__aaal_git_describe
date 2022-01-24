@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -e
+
+description="${@}"
+if [[ "${description}" == "" ]]; then
+    if [[ -f "pom.xml" ]]; then
+        pomdiff="$(git diff --cached --no-color pom.xml)"
+        if [[ "${pomdiff}" != "" ]]; then
+            artifact_id="$(__aaal_xq_pom_artifact)"
+            if echo "${pomdiff}" | grep --context=3 "<artifactId>${artifact_id}</artifactId>" | grep --quiet -E "\+[[:space:]]*<version>"; then
+                # change version of this artifact itself
+                pomversion="$(__aaal_xq_pom_version)"
+                description="Version ${pomversion}"
+            elif echo "${pomdiff}" | grep --quiet -E "\+[[:space:]]*<version>"; then
+                # change version of a dependency
+                dependency_version_line="$(echo "${pomdiff}" | grep -E "\+[[:space:]]*<version>")"
+                if [[ "${dependency_version_line}" =~ ^.*\>(.*)\<.*$ ]]; then
+                    dependency_version="${BASH_REMATCH[1]}"
+                fi
+                dependency_artifact_id_line="$(echo "${pomdiff}" | grep --context=3 -E "\+[[:space:]]*<version>" | grep -m1 "artifactId")"
+                if [[ "${dependency_artifact_id_line}" =~ ^.*\>(.*)\<.*$ ]]; then
+                    dependency_artifact_id="${BASH_REMATCH[1]}"
+                fi
+                description="Depend on ${dependency_artifact_id} ${dependency_version}"
+            elif echo "${pomdiff}" | grep --quiet -E "\+[[:space:]].*\\.version>"; then
+                # change version of a dependency (property style)
+                property_line="$(echo "${pomdiff}" | grep -E "\+[[:space:]].*\\.version>")"
+                if [[ "${property_line}" =~ ^.*\>(.*)\<.*$ ]]; then
+                    dependency_version="${BASH_REMATCH[1]}"
+                fi
+                if [[ "${property_line}" =~ ^.*\</(.*).version\>.*$ ]]; then
+                    dependency_name="${BASH_REMATCH[1]}"
+                fi
+                description="Depend on ${dependency_name} ${dependency_version}"
+            fi
+        fi
+    fi
+fi
+
+if [[ "${description}" == "" ]]; then
+    >&2 echo "unable to automatically describe"
+    exit 1
+else
+    echo "${description}"
+fi

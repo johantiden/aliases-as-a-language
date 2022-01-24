@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": sublime "${@}""
+__debugecho ": edit"
 
-nvim "${@}"
+echo "TODO: implement command 'z' in aliases-as-a-language"

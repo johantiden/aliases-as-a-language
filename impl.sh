@@ -15,17 +15,6 @@ function __debugecho {
 }
 
 
-# Simple git checkout if argument applied, otherwise ask for branch.
-function __aaal_git_checkout_contextual {
-    if [[ ! -z "${1}" ]] ; then
-      git checkout "${1}"
-    else
-      if OUTPUT=`__aaal_echo_one_branch`; then
-        git checkout $OUTPUT;
-      fi
-    fi
-}
-
 # TODO: Depends on t_preview
 function __aaal_t_fuzzy {
     FILE_AND_LINE=$(ag --nobreak --noheading . ~ | fzf --preview='t_preview {}')
@@ -91,10 +80,6 @@ function __aaal_choose_one_file_from_root_exact {
     echo $temp | fzf -e
 }
 
-function __aaal_git_commit {
-    __looklet_git_commit "${@}"
-}
-
 function __aaal_open_github {
     local repo="$2"
     if [[ -z "${repo}" ]]; then 
@@ -103,7 +88,7 @@ function __aaal_open_github {
     local branch="$1"
 
     pushd "${repo}"
-    local base_url=`__looklet_github_repository_url`
+    local base_url=`__aaal_github_repository_url`
     popd
     
     local url="${base_url}/tree/${branch}"

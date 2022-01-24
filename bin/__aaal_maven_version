@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+new="${1}"
+old="$(__aaal_xq_pom_version)"
+if [[ $? -ne 0 ]]; then
+    exit 1 # False
+fi
+CP='\033[95m' # pink
+CD='\033[39m' # default
+if [[ -z "${new}" ]]; then
+    echo "${old}"
+    exit 0
+fi
+if [[ "${new}" == "${old}" ]]; then
+    #echo -e "${CP}SAME VERSION:${CD} ${old}"
+    exit 0 # True
+fi
+
+line_from="$(grep -n "</parent>" pom.xml | head -n 1 | cut -d: -f1)"
+if [[ -z "${line_from}" ]]; then
+    line_from="1"
+fi
+line_to="$((line_from+10))"
+__aaal_maven_replace_tag_at_lines "version" "${new}" "${line_from}" "${line_to}"

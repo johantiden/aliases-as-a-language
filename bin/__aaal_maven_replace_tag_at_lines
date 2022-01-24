@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+tag_name="${1}"
+tag_value="${2}"
+line_from="${3}"
+line_to="${4}"
+
+if [[ "${tag_name}" == "" ]]; then
+    >&2 echo "missing tag_name"
+    exit 1 # Failure
+fi
+
+if [[ "${tag_value}" == "" ]]; then
+    >&2 echo "missing tag_value"
+    exit 1 # Failure
+fi
+
+if [[ "${line_from}" == "" ]]; then
+    >&2 echo "missing line_from"
+    exit 1 # Failure
+fi
+
+if [[ "${line_to}" == "" ]]; then
+    >&2 echo "missing line_to"
+    exit 1 # Failure
+fi
+
+regex="^(.*<${tag_name}>).*(</${tag_name}>.*)\$"
+replacement="\1${tag_value}\2"
+sedstuff="${line_from},${line_to}s#${regex}#${replacement}#"
+contents="$(sed -E "${sedstuff}" pom.xml)"
+echo "${contents}" > "pom.xml"
