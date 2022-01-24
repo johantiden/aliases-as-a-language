@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": yank"
 
-echo "TODO: implement command 'y' in aliases-as-a-language
+echo "TODO: implement command 'y' in aliases-as-a-language"

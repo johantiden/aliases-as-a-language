@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": edit exact repo"
 
-echo "TODO: implement command 'zer' in aliases-as-a-language
+echo "TODO: implement command 'zer' in aliases-as-a-language"

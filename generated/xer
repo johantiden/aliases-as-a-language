@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": xedit exact repo"
 
-echo "TODO: implement command 'xer' in aliases-as-a-language
+echo "TODO: implement command 'xer' in aliases-as-a-language"

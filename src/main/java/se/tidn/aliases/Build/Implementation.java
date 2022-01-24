@@ -13,7 +13,7 @@ interface Implementation {
     }
 
     static Implementation TODO(String command) {
-        return Implementation.of("echo \"TODO: implement command '"+command+"' in aliases-as-a-language");
+        return Implementation.of("echo \"TODO: implement command '"+command+"' in aliases-as-a-language\"");
     }
 
     String getBashCode();

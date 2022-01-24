@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": github yank one version"
 
-echo "TODO: implement command 'gy1v' in aliases-as-a-language
+echo "TODO: implement command 'gy1v' in aliases-as-a-language"

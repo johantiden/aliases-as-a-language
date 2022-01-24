@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": github xedit one file"
 
-echo "TODO: implement command 'gx1f' in aliases-as-a-language
+echo "TODO: implement command 'gx1f' in aliases-as-a-language"
