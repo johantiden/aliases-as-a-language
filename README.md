@@ -24,7 +24,7 @@ e.g.
 * `c`     commit
 * `m`     git-merge
 * `o`     open
-* `r`     remove (contextual)
+* `r`     remove
 * `v`     version
 * `y`     yank (save to clipboard)
 * `z`     open editor
