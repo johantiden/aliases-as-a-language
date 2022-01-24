@@ -66,7 +66,7 @@ public class Build {
 
         implementations.put("v", Implementation.of(".v")); // TODO: implement setter if argument present
         implementations.put("1v", Implementation.of("av | 1"));
-        putTodo(implementations, "av"); // list all tags
+        implementations.put("av", Implementation.of("__aaal_get_all_versions"));
         implementations.put(".v", Implementation.of("__aaal_get_version"));
 
         implementations.put("1", Implementation.of("__aaal_fzf"));

@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": all version"
 
-echo "TODO: implement command 'av' in aliases-as-a-language"
+__aaal_get_all_versions
