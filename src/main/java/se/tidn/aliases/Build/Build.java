@@ -59,7 +59,7 @@ public class Build {
         implementations.put("1f", Implementation.of("af | 1"));
         implementations.put("af", Implementation.of("__aaal_list_all_files_from_home"));
 
-        implementations.put("b", Implementation.of("cd `1b`"));
+        implementations.put("b", Implementation.of("__aaal_git_checkout_contextual \"${1}\""));
         implementations.put("1b", Implementation.of("ab | 1"));
         implementations.put("ab", Implementation.of("__aaal_get_all_branches"));
         implementations.put(".b", Implementation.of("__aaal_echo_this_branch"));

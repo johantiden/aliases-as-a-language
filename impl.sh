@@ -15,17 +15,6 @@ function __debugecho {
 }
 
 
-# Simple git checkout if argument applied, otherwise ask for branch.
-function __aaal_git_checkout_contextual {
-    if [[ ! -z "${1}" ]] ; then
-      git checkout "${1}"
-    else
-      if OUTPUT=`__aaal_echo_one_branch`; then
-        git checkout $OUTPUT;
-      fi
-    fi
-}
-
 # TODO: Depends on t_preview
 function __aaal_t_fuzzy {
     FILE_AND_LINE=$(ag --nobreak --noheading . ~ | fzf --preview='t_preview {}')

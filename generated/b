@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": branch"
 
-cd `1b`
+__aaal_git_checkout_contextual "${1}"

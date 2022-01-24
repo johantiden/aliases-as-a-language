@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+# Simple git checkout if argument applied, otherwise ask for branch.
+
+if [[ ! -z "${1}" ]] ; then
+  git checkout -q "${1}"
+else
+  if OUTPUT=`1b`; then
+    git checkout -q $OUTPUT;
+  fi
+fi
