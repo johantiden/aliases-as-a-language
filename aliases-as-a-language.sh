@@ -148,19 +148,9 @@ alias rd1f='echo not implemented'	#remove dir of one file
 alias rd1F='echo not implemented'	#remove dir of one sudo file
 alias r1F='rm $(e1F)'				#remove one sudo file
 
-
-
-
 alias rd='echo remove develop not allowed'
 alias r.v='echo remove this version does not make sense'
 alias r.c='echo not implemented. hmm maybe' # Maybe "git reset HEAD^" ?
-
-
-
-### Up
-#alias u='git push'					#up
-#alias ug='git push'					#up git
-
 
 ### Version
 alias vp='v $(p)' # version pasting
