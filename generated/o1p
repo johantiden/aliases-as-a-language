@@ -3,4 +3,4 @@
 source "$(dirname $0)/../impl.sh"
 __debugecho ": open one pasting"
 
-p | 1 | o
+o `1p`

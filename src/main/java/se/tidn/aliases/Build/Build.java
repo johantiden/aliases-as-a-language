@@ -91,7 +91,7 @@ public class Build {
         implementations.put("o1b", Implementation.of("go1b"));
         implementations.put("o.b", Implementation.of("go.b"));
         implementations.put("oap", Implementation.of("p | xargs o"));
-        implementations.put("o1p", Implementation.of("p | 1 | o"));
+        implementations.put("o1p", Implementation.of("o `1p`"));
 
         implementations.put("ov", Implementation.of("gov"));
         implementations.put("oav", Implementation.of("goav"));
