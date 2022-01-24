@@ -67,9 +67,6 @@ alias np='n $(p)'  			#new-branch pasting
 
 ### Open
 alias o.b='__aaal_open_github `e.b`' #open this branch (on github)
-alias ob='o.b' 								  #open this branch (on github)
-alias o.r='o.b'                               #open this repo (on github)
-alias or='o.r'                                #open this repo (on github)
 alias o1b='__aaal_open_github `e1b`' #open one branch (on github)
 alias o1r='__aaal_open_github "" `1r`' #open one branch (on github)
 

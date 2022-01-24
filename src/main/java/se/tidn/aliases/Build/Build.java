@@ -49,7 +49,7 @@ public class Build {
         HashMap<String, Implementation> implementations = new HashMap<>();
 
         // Standalone verb
-        putTodo(implementations, "o");
+        implementations.put("o", Implementation.of("__aaal_open \"${1}\""));
         putTodo(implementations, "y");
         putTodo(implementations, "z");
         putTodo(implementations, "x");
