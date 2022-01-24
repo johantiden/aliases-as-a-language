@@ -22,40 +22,38 @@ e.g.
 ## Verbs:
 * `b`     (go)branch
 * `c`     commit
-* `e`     echo
-* `g`     go (contextual)
 * `m`     git-merge
 * `o`     open
 * `r`     remove (contextual)
 * `v`     version
-* `y`     yank (as in vim)
+* `y`     yank (save to clipboard)
 * `z`     open editor
 * `x`     open editor (gui)
-* `n`    git new
 
 ## Nouns
 * `b` branch
-* `c` commit (message)
+* `c` commit (reference)
 * `d` directory
-* `d` develop (only contextual)
 * `f` file (search under ~)
-* `m` main branch (only contextual)
 * `p` pasting (like vim)
 * `r` (git) repo
 * `t` text row (search under ~)
 * `v` version
+* `d` develop (only contextual)
+* `m` main branch (only contextual)
 
 ## Special
-* `1` one - One should be selected. Where to choose from depends on context, especially the NOUN. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway.
-    * e.g. `e1f` "echo one file"
-
-* `.` local - Determines which item from context in contrast to `1` which needs user 
+* `1` one - One should be selected. Where to choose from depends on context, especially the NOUN. `1f` one file chooses files from all sub folders of the user home folder. `1F` chooses a file from all files on the computer. Note that I chose not to use the local directory because the use for that is diminished since you can probably find the file easily anyway. You can use the below `.` modifier for those cases.
+    * `1f` "one file"
+* `e` exact - like above just search exactly instead of fuzzily. See fzf documentation for details.
+ 
+* `.` this - Determines which item from context in contrast to `1` which needs user 
     * `y.d` "yank this dir"
     * `.t` text row (search in this directory .)
     * `.r` "this repo"
 
-* Combining `1.` search here. 
-    * `1.f` one local file (search under .) 
+* Suffixing a noun with `.`. Search here. Notice the difference from "this", where "this" is usually a single item and "here" might result in a long list of items.
+    * `1f.` one file here 
 
 * `d1f`   dir of one file        (kind of breaks grammar)
 * `d1F`   sudo dir of one file   (kind of breaks grammar)
