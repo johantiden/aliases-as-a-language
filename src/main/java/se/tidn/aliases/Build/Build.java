@@ -50,7 +50,9 @@ public class Build {
 
         // Standalone verb
         implementations.put("o", Implementation.of("__aaal_open \"${1}\""));
-        putTodo(implementations, "y");
+        implementations.put("y", Implementation.of("__aaal_clip_save \"${1}\""));
+
+
         putTodo(implementations, "z");
         putTodo(implementations, "x");
 

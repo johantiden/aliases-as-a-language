@@ -9,7 +9,6 @@ export PATH=$thisDirectory/generated:$PATH
 # Verbs
 #########################
 alias c='__aaal_git_commit '
-alias y='__aaal_clip_save'
 alias v='__aaal_set_version '
 
 # Nouns
