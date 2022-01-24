@@ -87,16 +87,7 @@ alias og='pr'					#open git
 alias c1f='cccat `e1f`'
 
 ### Yank
-alias yb='y.b' 										# yank branch
-alias y.b='e.b | y' 								# yank this branch
-alias y1b='e1b | y' 								# yank this branch
-alias y1d='e1d | y' 								# yank one dir
-alias y.d='e.d | y' 								# yank this dir
-alias y1f='1f | y' 									# yank file
-alias yv='y.v' 										# yank this version
 alias y.c='e.c | y' 								# yank this commit message
-alias y.r='e.r | y' 								# yank this repo name
-alias yr='y.r'
 
 ### Sublime
 alias z1f='z `e1f`' # sublime one file from ~

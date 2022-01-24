@@ -108,7 +108,7 @@ public class Build {
         putTodo(implementations, "r1p"); // try to guess what the pasting contains
         putTodo(implementations, "rp"); // try to guess what the pasting contains
         putTodo(implementations, "rv");
-        putTodo(implementations, "r1v");
+        putTodo(implementations, "r1v");y.
         putTodo(implementations, "r.v");
         implementations.put("r1f", Implementation.of("rm `1f`"));
         putTodo(implementations, "r1b");
