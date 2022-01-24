@@ -46,10 +46,6 @@ function __aaal_column {
     cut -d' ' -f"$1"
 }
 
-#function __aaal_private_choose_one_file_from {
-#    find "$1" -print | fzf "${@:2}"
-#}
-
 function __aaal_one {
     cat | fzf
 }
@@ -58,16 +54,12 @@ function __aaal_one_exact {
     cat | fzf -e
 }
 
+function __aaal_list_all_files_from_here {
+    find . -print
+}
+
 function __aaal_list_all_files_from_home {
     find ~ -print
-}
-
-function __aaal_choose_one_file_from_home {
-    find ~ -print | fzf
-}
-
-function __aaal_choose_one_file_from_home_exact {
-    find ~ -print | fzf -e
 }
 
 function __aaal_choose_one_file_from_root {

@@ -54,7 +54,15 @@ public class Language {
                 .filter(sentence -> !(contains(sentence, Sentence.of(Verb.YANK.word, Noun.PASTING.word))))
                 .filter(sentence -> !(contains(sentence, Sentence.of(Verb.YANK.word, Quantifier.ALL.word, Noun.PASTING.word))))
                 .filter(sentence -> !sentence.command.equals("r")) // remove 'repo' and 'remove' to avoid duplicate.
+                .filter(sentence -> !(contains(sentence, Noun.BRANCH) && contains(sentence, PostNoun.HERE)))
+                .filter(sentence -> !(contains(sentence, Noun.PASTING) && contains(sentence, PostNoun.HERE)))
+                .filter(sentence -> !(contains(sentence, Noun.VERSION) && contains(sentence, PostNoun.HERE)))
+                .filter(sentence -> !(contains(sentence, Noun.REPO) && contains(sentence, PostNoun.HERE)))
                 .collect(Collectors.toList());
+    }
+
+    private static boolean contains(Sentence sentence, PostNoun postNoun) {
+        return sentence.description.contains(postNoun.word.description);
     }
 
     private static boolean contains(Sentence sentence, Quantifier quantifier) {
@@ -89,7 +97,17 @@ public class Language {
             for (Sentence nounEnding : nounEndingsCopy) {
                 nounEndings.add(Sentence.of(quantifier.word, nounEnding));
             }
-        } return nounEndings;
+        }
+
+        for (PostNoun postNoun : PostNoun.values()) {
+            nounEndings.addAll(
+                    nounEndings.stream()
+                            .map(ne -> Sentence.of(ne, postNoun.word))
+                            .collect(Collectors.toSet())
+            );
+        }
+
+        return nounEndings;
     }
 
     static List<Sentence> filterDuplicateWords(List<Sentence> commands) {
@@ -143,6 +161,17 @@ public class Language {
         final Sentence word;
 
         Noun(Sentence word) {
+            this.word = word;
+        }
+    }
+
+    enum PostNoun {
+        HERE(Sentence.of(".", "here")),
+        ;
+
+        final Sentence word;
+
+        PostNoun(Sentence word) {
             this.word = word;
         }
     }
