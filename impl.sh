@@ -91,10 +91,6 @@ function __aaal_choose_one_file_from_root_exact {
     echo $temp | fzf -e
 }
 
-function __aaal_git_commit {
-    echo "TODO: __aaal_git_commit"
-}
-
 function __aaal_open_github {
     local repo="$2"
     if [[ -z "${repo}" ]]; then 
@@ -103,7 +99,7 @@ function __aaal_open_github {
     local branch="$1"
 
     pushd "${repo}"
-    local base_url=`__looklet_github_repository_url`
+    local base_url=`__aaal_github_repository_url`
     popd
     
     local url="${base_url}/tree/${branch}"
