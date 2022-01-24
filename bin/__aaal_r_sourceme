@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
-cd "`1r`"
-st # git status
+repo=$(1r)
+if [[ -z "${repo}" ]]; then
+    #echo "aborted ____aaal_r_sourceme"
+    :
+else
+    cd "${repo}"
+    st # git status
+fi
 
