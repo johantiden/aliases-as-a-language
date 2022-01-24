@@ -10,7 +10,6 @@ export PATH=$thisDirectory/generated:$PATH
 #########################
 alias b='__aaal_git_checkout_contextual '
 alias c='__aaal_git_commit '
-alias p='ep'
 alias y='__aaal_clip_save'
 alias v='__aaal_set_version '
 
@@ -71,7 +70,6 @@ alias et='__aaal_t_exact'						# echo file and row, exact
 alias ed1f='dirname `e1f`'						# echo dir of one file from ~
 alias ed1F='dirname `e1F`'						# echo dir of one file from /
 alias e.d='pwd'
-alias ep='__aaal_clip_load'								# echo pasting
 alias e.v='__aaal_get_version ' 	    		# echo this version
 alias .v='e.v ' 	    		# echo this version
 alias e.r='__looklet_github_repository_name'

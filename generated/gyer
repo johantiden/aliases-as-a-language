@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-source "$(dirname $0)/../impl.sh"
-__debugecho ": github yank exact repo"
-
-echo "TODO: implement command 'gyer' in aliases-as-a-language"

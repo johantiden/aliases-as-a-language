@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": edit one pasting"
+
+echo "TODO: implement command 'z1p' in aliases-as-a-language"

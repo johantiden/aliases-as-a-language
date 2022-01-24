@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": yank exact file"
+__debugecho ": open one pasting"
 
-ef | y
+p | 1 | o

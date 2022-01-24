@@ -49,7 +49,10 @@ public class Language {
                 .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, Noun.FILE)))
                 .filter(sentence -> !(contains(sentence, Verb.EDIT) && contains(sentence, Noun.VERSION)))
                 .filter(sentence -> !(contains(sentence, Verb.EDIT) && contains(sentence, Quantifier.ALL)))
-                .filter(sentence -> !(contains(sentence, Contextual.GIT) && contains(sentence, Verb.EDIT) && contains(sentence, Noun.BRANCH)))
+//                .filter(sentence -> !(contains(sentence, Contextual.GIT) && contains(sentence, Verb.EDIT) && contains(sentence, Noun.BRANCH)))
+                .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, Noun.PASTING)))
+                .filter(sentence -> !(contains(sentence, Sentence.of(Verb.YANK.word, Noun.PASTING.word))))
+                .filter(sentence -> !(contains(sentence, Sentence.of(Verb.YANK.word, Quantifier.ALL.word, Noun.PASTING.word))))
                 .collect(Collectors.toList());
     }
 
@@ -63,6 +66,10 @@ public class Language {
 
     private static boolean contains(Sentence sentence, Verb verb) {
         return sentence.description.contains(verb.word.description);
+    }
+
+    private static boolean contains(Sentence sentence, Sentence subSentence) {
+        return sentence.description.contains(subSentence.description);
     }
 
     private static boolean contains(Sentence sentence, Contextual contextual) {
@@ -98,7 +105,7 @@ public class Language {
     }
 
     enum Contextual {
-        GIT(Sentence.of("g", "github")),
+//        GIT(Sentence.of("g", "github")),
         ;
 
         final Sentence word;
@@ -111,7 +118,7 @@ public class Language {
     private enum Quantifier {
         ALL(Sentence.of("a", "all")),
 //        EACH(Sentence.of("e", "each")),
-        EXACT(Sentence.of("e", "exact")),
+//        EXACT(Sentence.of("e", "exact")),
         ONE(Sentence.of("1", "one")),
         THIS(Sentence.of(".", "this")),
 
@@ -127,6 +134,7 @@ public class Language {
     enum Noun {
         FILE(Sentence.of("f", "file")),
         BRANCH(Sentence.of("b", "branch")),
+        PASTING(Sentence.of("p", "pasting")),
         REPO(Sentence.of("r", "repo")),
         VERSION(Sentence.of("v", "version")),
         ;

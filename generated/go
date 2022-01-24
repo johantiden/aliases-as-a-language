@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-source "$(dirname $0)/../impl.sh"
-__debugecho ": github open"
-
-echo "TODO: implement command 'go' in aliases-as-a-language"

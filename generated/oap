@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": open exact version"
+__debugecho ": open all pasting"
 
-goev
+p | xargs o
