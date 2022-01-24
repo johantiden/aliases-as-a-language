@@ -58,6 +58,7 @@ public class Language {
                 .filter(sentence -> !(contains(sentence, Noun.PASTING) && contains(sentence, PostNoun.HERE)))
                 .filter(sentence -> !(contains(sentence, Noun.VERSION) && contains(sentence, PostNoun.HERE)))
                 .filter(sentence -> !(contains(sentence, Noun.REPO) && contains(sentence, PostNoun.HERE)))
+                .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, PostNoun.HERE)))
                 .collect(Collectors.toList());
     }
 
@@ -153,6 +154,7 @@ public class Language {
     enum Noun {
         FILE(Sentence.of("f", "file")),
         BRANCH(Sentence.of("b", "branch")),
+        DIRECTORY(Sentence.of("d", "directory")),
         PASTING(Sentence.of("p", "pasting")),
         REPO(Sentence.of("r", "repo")),
         VERSION(Sentence.of("v", "version")),

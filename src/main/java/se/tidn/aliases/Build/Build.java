@@ -85,6 +85,14 @@ public class Build {
         implementations.put("1p", Implementation.of("p | 1"));
         implementations.put("op", Implementation.of("o `p`"));
 
+        putTodo(implementations, "ad");
+        putTodo(implementations, "1d");
+        implementations.put(".d", Implementation.of("pwd"));
+        putTodo(implementations, "1d");
+        implementations.put("d.", Implementation.of("1d."));
+        putTodo(implementations, "1d.");
+        putTodo(implementations, "ad.");
+
         // Open
         implementations.put("of", Implementation.of("o1f"));
         implementations.put("of.", Implementation.of("o1f."));
@@ -108,6 +116,13 @@ public class Build {
         implementations.put("o1r", Implementation.of("go1r"));
         implementations.put("o.r", Implementation.of("go.r"));
 
+        implementations.put("od", Implementation.of("o.d"));
+        implementations.put("o1d", Implementation.of("o `1d`"));
+        implementations.put("o.d", Implementation.of("o `.d`"));
+        implementations.put("od.", Implementation.of("o `d.`"));
+        implementations.put("o1d.", Implementation.of("o `1d.`"));
+        implementations.put("oad.", Implementation.of("o `ad.`"));
+
         // Remove
         implementations.put("rf", Implementation.of("r1f"));
         implementations.put("rf.", Implementation.of("r1f."));
@@ -121,6 +136,11 @@ public class Build {
         implementations.put("r1f.", Implementation.of("rm `1f.`"));
         putTodo(implementations, "r1b");
         putTodo(implementations, "r.b");
+        implementations.put("rd", Implementation.of("r1d"));
+        implementations.put("r1d", Implementation.of("rm `1d`"));
+        putTodo(implementations, "r.d");
+        implementations.put("rd.", Implementation.of("r1d."));
+        implementations.put("r1d.", Implementation.of("rm `1d.`"));
 
         // Yank
         implementations.put("yf", Implementation.of("y1f"));
@@ -142,6 +162,13 @@ public class Build {
         implementations.put("yar", Implementation.of("ar | y"));
         implementations.put("y1r", Implementation.of("1r | y"));
         implementations.put("y.r", Implementation.of(".r | y"));
+        implementations.put("yd", Implementation.of("1d | y"));
+        implementations.put("yad", Implementation.of("ad | y"));
+        implementations.put("y1d", Implementation.of("1d | y"));
+        implementations.put("y.d", Implementation.of(".d | y"));
+        implementations.put("yd.", Implementation.of("y1d."));
+        implementations.put("y1d.", Implementation.of("1d. | y"));
+        implementations.put("yad.", Implementation.of("ad. | y"));
 
         // z edit
         implementations.put("zf", Implementation.of("z1f"));
@@ -159,6 +186,11 @@ public class Build {
         putTodo(implementations, "zp"); // TODO: create tempfile, edit, yank
         putTodo(implementations, "z1p"); // TODO: create tempfile, edit, yank
 
+        implementations.put("zd", Implementation.of("z.d"));
+        implementations.put("z1d", Implementation.of("z `1d`"));
+        implementations.put("z.d", Implementation.of("z `.d`"));
+        implementations.put("zd.", Implementation.of("z `d.`"));
+        implementations.put("z1d.", Implementation.of("z `1d.`"));
 
         // x edit
         implementations.put("xf", Implementation.of("x1f"));
@@ -176,11 +208,19 @@ public class Build {
         putTodo(implementations, "xp"); // TODO: create tempfile, edit, yank
         putTodo(implementations, "x1p"); // TODO: create tempfile, edit, yank
 
+        implementations.put("xd", Implementation.of("x1d"));
+        implementations.put("x1d", Implementation.of("x `1d`"));
+        implementations.put("x.d", Implementation.of("x `.d`"));
+        implementations.put("xd.", Implementation.of("x1d."));
+        implementations.put("x1d.", Implementation.of("x `1d.`"));
+
+
         // These don't make sense on their own.
         implementations.put("a", Implementation.NONE);
         implementations.put(".", Implementation.NONE);
 
         // These make sense but are blocked for other reasons (e.g. too dangerous)
+        implementations.put("d", Implementation.NONE);
         implementations.put("oaf", Implementation.NONE);
         implementations.put("yaf", Implementation.NONE);
         implementations.put("rr", Implementation.NONE);
@@ -192,6 +232,9 @@ public class Build {
         implementations.put("r1r", Implementation.NONE);
         implementations.put("r.r", Implementation.NONE);
         implementations.put("raf.", Implementation.NONE);
+        implementations.put("oad", Implementation.NONE);
+        implementations.put("rad", Implementation.NONE);
+        implementations.put("rad.", Implementation.NONE);
         return implementations;
     }
 
