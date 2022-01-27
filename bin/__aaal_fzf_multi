@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+__aaal_require_command fzf
+fzf --multi

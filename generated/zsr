@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": edit some repo"
+
+echo "TODO: implement command 'zsr' in aliases-as-a-language"

@@ -2,6 +2,7 @@ package se.tidn.aliases.Build;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -41,7 +42,12 @@ public class Language {
             }
         }
 
-        return removeKnownNonsenseCombinations(filterDuplicateWords(commands));
+        return sort(removeKnownNonsenseCombinations(filterDuplicateWords(commands)));
+    }
+
+    private static List<Sentence> sort(List<Sentence> sentences) {
+        sentences.sort(Comparator.comparing(sentence -> sentence.command));
+        return sentences;
     }
 
     private static List<Sentence> removeKnownNonsenseCombinations(List<Sentence> sentences) {
@@ -141,6 +147,7 @@ public class Language {
 //        EACH(Sentence.of("e", "each")),
 //        EXACT(Sentence.of("e", "exact")),
         ONE(Sentence.of("1", "one")),
+        SOME(Sentence.of("s", "some")),
         THIS(Sentence.of(".", "this")),
 
         ;

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": edit some row of text here"
+
+echo "TODO: implement command 'zst.' in aliases-as-a-language"

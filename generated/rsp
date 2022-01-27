@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove some pasting"
+
+echo "TODO: implement command 'rsp' in aliases-as-a-language"
