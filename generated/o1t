@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": xedit one directory"
+__debugecho ": open one row of text"
 
-x `1d`
+__aaal_o1t

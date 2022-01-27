@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-source "$(dirname $0)/../impl.sh"
-__debugecho ": xedit repo"
-
-echo "TODO: implement command 'xr' in aliases-as-a-language"

@@ -32,7 +32,7 @@ alias bm='b `__aaal_git_main_branch`'		# branch main/master
 
 
 alias bp='b $(p)'								# branch pasting
-alias b1b='b `e1b`'								# branch one branch
+alias b1b='b `1b`'								# branch one branch
 
 ### Commit
 alias gcp='c $(p)'								# commit pasting (as message)
@@ -51,22 +51,22 @@ alias g1d='cd `e1d`' 		#get one dir
 alias gd='bd' 				#get develop
 alias gg='git pull' 		#get git
 alias gm='bm' 				#get master
-alias g1b='b `e1b`' 		#get one branch (checkout)
+alias g1b='b `1b`' 		#get one branch (checkout)
 alias gb='git co -'	 		#get "back" 
 
 ### Merge
 alias m='merge '
 alias mb='m1b'							#merge branch
 alias md='m develop'					#merge develop
-alias m1b='git merge --no-edit `e1b`'	#merge one branch
+alias m1b='git merge --no-edit `1b`'	#merge one branch
 alias mp='git merge --no-edit `p`' 		#merge pasting
 
 ### New
 alias np='n $(p)'  			#new-branch pasting
 
 ### Open
-alias o.b='__aaal_open_github `e.b`' #open this branch (on github)
-alias o1b='__aaal_open_github `e1b`' #open one branch (on github)
+alias o.b='__aaal_open_github `.b`' #open this branch (on github)
+alias o1b='__aaal_open_github `1b`' #open one branch (on github)
 alias o1r='__aaal_open_github "" `1r`' #open one branch (on github)
 
 alias o1d='o `e1d`' 			#open one dir from ~
@@ -114,7 +114,7 @@ alias d='git --no-pager diff'
 alias .d='pwd'
 alias mt='git mt '
 alias hard='git reset --hard'
-alias hardo='git reset --hard origin/`e.b`'
+alias hardo='git reset --hard origin/`.b`'
 
 
 alias dp='depend `p`' # Depend on pasting, hopefully a repo name

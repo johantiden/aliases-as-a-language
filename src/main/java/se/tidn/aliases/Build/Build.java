@@ -54,7 +54,6 @@ public class Build {
 
 
         putTodo(implementations, "z");
-        putTodo(implementations, "x");
 
         // No verb
         implementations.put("f", Implementation.of("1f"));
@@ -93,6 +92,17 @@ public class Build {
         putTodo(implementations, "1d.");
         putTodo(implementations, "ad.");
 
+        implementations.put("t", Implementation.of("1t"));
+        implementations.put("1t", Implementation.of("at | 1"));
+        implementations.put("at", Implementation.of("ag --nobreak --noheading . ~"));
+        implementations.put("t.", Implementation.of("1t."));
+        implementations.put("at.", Implementation.of("ag --nobreak --noheading . ."));
+        implementations.put("1t.", Implementation.of("at. | 1"));
+        implementations.put("zt", Implementation.of("z1t"));
+        implementations.put("zt.", Implementation.of("z1t."));
+        putTodo(implementations, "z1t");
+        putTodo(implementations, "z1t.");
+
         // Open
         implementations.put("of", Implementation.of("o1f"));
         implementations.put("of.", Implementation.of("o1f."));
@@ -123,6 +133,11 @@ public class Build {
         implementations.put("o1d.", Implementation.of("o `1d.`"));
         implementations.put("oad.", Implementation.of("o `ad.`"));
 
+        implementations.put("ot", Implementation.of("o1t"));
+        implementations.put("o1t", Implementation.of("__aaal_o1t"));
+        implementations.put("ot.", Implementation.of("o1t."));
+        implementations.put("o1t.", Implementation.of("__aaal_o1t."));
+
         // Remove
         implementations.put("rf", Implementation.of("r1f"));
         implementations.put("rf.", Implementation.of("r1f."));
@@ -141,6 +156,11 @@ public class Build {
         putTodo(implementations, "r.d");
         implementations.put("rd.", Implementation.of("r1d."));
         implementations.put("r1d.", Implementation.of("rm `1d.`"));
+
+        putTodo(implementations, "rt");
+        putTodo(implementations, "rt.");
+        putTodo(implementations, "r1t");
+        putTodo(implementations, "r1t.");
 
         // Yank
         implementations.put("yf", Implementation.of("y1f"));
@@ -170,6 +190,12 @@ public class Build {
         implementations.put("y1d.", Implementation.of("1d. | y"));
         implementations.put("yad.", Implementation.of("ad. | y"));
 
+        implementations.put("yt", Implementation.of("t | y"));
+        implementations.put("y1t", Implementation.of("1t | y"));
+        implementations.put("yt.", Implementation.of("t. | y"));
+        implementations.put("yat.", Implementation.of("at. | y"));
+        implementations.put("y1t.", Implementation.of("1t. | y"));
+
         // z edit
         implementations.put("zf", Implementation.of("z1f"));
         implementations.put("zf.", Implementation.of("z1f."));
@@ -192,29 +218,6 @@ public class Build {
         implementations.put("zd.", Implementation.of("z `d.`"));
         implementations.put("z1d.", Implementation.of("z `1d.`"));
 
-        // x edit
-        implementations.put("xf", Implementation.of("x1f"));
-        implementations.put("xf.", Implementation.of("x1f."));
-        implementations.put("x1f", Implementation.of("x `1f`"));
-        implementations.put("x1f.", Implementation.of("x `1f.`"));
-        putTodo(implementations, "xb"); // rename branch maybe?
-        putTodo(implementations, "x.b"); // rename branch maybe?
-        putTodo(implementations, "x1b"); // rename branch maybe?
-
-        putTodo(implementations, "xr"); // repo settings on github
-        putTodo(implementations, "x1r"); // repo settings on github
-        putTodo(implementations, "x.r"); // repo settings on github
-
-        putTodo(implementations, "xp"); // TODO: create tempfile, edit, yank
-        putTodo(implementations, "x1p"); // TODO: create tempfile, edit, yank
-
-        implementations.put("xd", Implementation.of("x1d"));
-        implementations.put("x1d", Implementation.of("x `1d`"));
-        implementations.put("x.d", Implementation.of("x `.d`"));
-        implementations.put("xd.", Implementation.of("x1d."));
-        implementations.put("x1d.", Implementation.of("x `1d.`"));
-
-
         // These don't make sense on their own.
         implementations.put("a", Implementation.NONE);
         implementations.put(".", Implementation.NONE);
@@ -235,6 +238,11 @@ public class Build {
         implementations.put("oad", Implementation.NONE);
         implementations.put("rad", Implementation.NONE);
         implementations.put("rad.", Implementation.NONE);
+        implementations.put("oat", Implementation.NONE);
+        implementations.put("oat.", Implementation.NONE);
+        implementations.put("rat", Implementation.NONE);
+        implementations.put("rat.", Implementation.NONE);
+        implementations.put("yat", Implementation.NONE);
         return implementations;
     }
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": xedit one file"
+__debugecho ": yank all row of text here"
 
-x `1f`
+at. | y

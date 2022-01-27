@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 source "$(dirname $0)/../impl.sh"
-__debugecho ": xedit one file here"
+__debugecho ": row of text here"
 
-x `1f.`
+1t.

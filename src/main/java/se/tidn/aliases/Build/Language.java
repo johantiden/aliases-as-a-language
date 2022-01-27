@@ -59,6 +59,7 @@ public class Language {
                 .filter(sentence -> !(contains(sentence, Noun.VERSION) && contains(sentence, PostNoun.HERE)))
                 .filter(sentence -> !(contains(sentence, Noun.REPO) && contains(sentence, PostNoun.HERE)))
                 .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, PostNoun.HERE)))
+                .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, Noun.TEXT)))
                 .collect(Collectors.toList());
     }
 
@@ -157,6 +158,7 @@ public class Language {
         DIRECTORY(Sentence.of("d", "directory")),
         PASTING(Sentence.of("p", "pasting")),
         REPO(Sentence.of("r", "repo")),
+        TEXT(Sentence.of("t", "row of text")),
         VERSION(Sentence.of("v", "version")),
         ;
 
@@ -183,7 +185,6 @@ public class Language {
         OPEN(Sentence.of("o", "open")),
         REMOVE(Sentence.of("r", "remove")),
         YANK(Sentence.of("y", "yank")),
-        XEDIT(Sentence.of("x", "xedit")),
         ;
 
         final Sentence word;

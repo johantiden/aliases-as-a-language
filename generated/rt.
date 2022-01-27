@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(dirname $0)/../impl.sh"
+__debugecho ": remove row of text here"
+
+echo "TODO: implement command 'rt.' in aliases-as-a-language"

@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-source "$(dirname $0)/../impl.sh"
-__debugecho ": xedit one pasting"
-
-echo "TODO: implement command 'x1p' in aliases-as-a-language"
