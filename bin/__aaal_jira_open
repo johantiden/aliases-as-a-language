@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+input="${1}"
+
+ticket=$(__aaal_jira_ticket_parse "${input}")
+if [[ "${ticket}" != "" ]]; then
+    o "${JIRA_BASE_URL}/browse/${ticket}"
+    exit 0
+fi
+
+version=$(__aaal_jira_version_parse "${input}")
+if [[ "${version}" != "" ]]; then
+    repo=$(.r | xargs basename)
+    o "${JIRA_BASE_URL}/issues/?jql=fixVersion%3D%22${repo}%20${version}%22"
+    exit 0
+fi
+
+o "${JIRA_BASE_URL}/issues/?jql=text~%22${input}%22"
+
+

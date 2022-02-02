@@ -278,6 +278,15 @@ public class Build {
         putTodo(implementations, "zst");
         putTodo(implementations, "zst.");
 
+        // Jira
+        putTodo(implementations, "jo");
+        implementations.put("jo", Implementation.of("__aaal_jira_open \"${1}\""));
+        implementations.put("jo.b", Implementation.of("jo `.b`"));
+        implementations.put("j1b", Implementation.of("jo `1b`"));
+        implementations.put("j.b", Implementation.of("jo `.b`"));
+        implementations.put("j.r", Implementation.of("jo `.r | xargs basename`"));
+        implementations.put("j.v", Implementation.of("jo `.v`"));
+
         // These don't make sense on their own.
         implementations.put("a", Implementation.NONE);
         implementations.put(".", Implementation.NONE);

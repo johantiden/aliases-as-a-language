@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# These returns: "SWDEV-5062" or "HTTPCLIENT-2022"
+#
+# __looklet_ticket_parse "SWDEV-5062"
+# __looklet_ticket_parse "HTTPCLIENT-2022"
+#
+# __looklet_ticket_parse "https://looklet.atlassian.net/browse/SWDEV-5062"
+# __looklet_ticket_parse "https://issues.apache.org/jira/browse/HTTPCLIENT-2022"
+#
+# __looklet_ticket_parse "feature/SWDEV-5062-transform-interface"
+# __looklet_ticket_parse "feature/HTTPCLIENT-2022-httpcacheentryserializationexception-message-unused"
+
+string="${1}"
+if [[ "${string}" =~ ^([a-zA-Z]+-[0-9]+)$ ]]; then
+    echo "${BASH_REMATCH[1]}"
+    exit 0 # True
+fi
+if [[ "${string}" =~ ^.*/browse/([a-zA-Z]+-[0-9]+)$ ]]; then
+    echo "${BASH_REMATCH[1]}"
+    exit 0 # True
+fi
+if [[ "${string}" =~ ^.*/([a-zA-Z]+-[0-9]+).*$ ]]; then
+    echo "${BASH_REMATCH[1]}"
+    exit 0 # True
+fi
+exit 1 # False

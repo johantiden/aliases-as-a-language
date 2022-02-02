@@ -35,6 +35,12 @@ public class Language {
         }
 
         for (Contextual contextual : Contextual.values()) {
+            for (Sentence nounEnding : nounEndings) {
+                commands.add(Sentence.of(contextual.word, nounEnding));
+            }
+        }
+
+        for (Contextual contextual : Contextual.values()) {
             for (Verb verb : Verb.values()) {
                 for (Sentence nounEnding : nounEndings) {
                     commands.add(Sentence.of(contextual.word, verb.word, nounEnding));
@@ -66,6 +72,10 @@ public class Language {
                 .filter(sentence -> !(contains(sentence, Noun.REPO) && contains(sentence, PostNoun.HERE)))
                 .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, PostNoun.HERE)))
                 .filter(sentence -> !(contains(sentence, Quantifier.THIS) && contains(sentence, Noun.TEXT)))
+                .filter(sentence -> !(contains(sentence, Contextual.JIRA) && contains(sentence, Noun.DIRECTORY)))
+                .filter(sentence -> !(contains(sentence, Contextual.JIRA) && contains(sentence, Noun.TEXT)))
+                .filter(sentence -> !(contains(sentence, Contextual.JIRA) && contains(sentence, Noun.FILE)))
+                .filter(sentence -> !(contains(sentence, Contextual.JIRA) && contains(sentence, Verb.REMOVE)))
                 .collect(Collectors.toList());
     }
 
@@ -133,6 +143,7 @@ public class Language {
 
     enum Contextual {
 //        GIT(Sentence.of("g", "github")),
+        JIRA(Sentence.of("j", "jira:")),
         ;
 
         final Sentence word;
