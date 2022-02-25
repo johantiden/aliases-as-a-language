@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -e
 
-# TODO: ~/git is hardcoded. '~' would be nice as root but a lot of false positives pop up, and it's slow.
-find ~/git -type d -exec test -e '{}/.git' ';' -print -prune
+__aaal_all_repo_dirs | xargs -n1 basename

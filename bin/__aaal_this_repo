@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-repo=$(git remote -v | awk '/fetch/{print $2}' | sed -e 's%\.git$%%' -e 's%^.*:%%' -e 's%^.*/%%')
+#repo=$(git remote -v | awk '/fetch/{print $2}' | sed -e 's%\.git$%%' -e 's%^.*:%%' -e 's%^.*/%%')
 
-realpath . | sed "s/${repo}.*/${repo}/g"
+#realpath . | sed "s/${repo}.*/${repo}/g"
+
+git remote -v | awk '/fetch/{print $2}' | sed -e 's%\.git$%%' -e 's%^.*:%%' -e 's%^.*/%%'
 

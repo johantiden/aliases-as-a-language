@@ -5,7 +5,9 @@ if [[ -z "${repo}" ]]; then
     #echo "aborted ____aaal_r_sourceme"
     :
 else
-    cd "${repo}"
-    st # git status
+	# list all dirs, grep the ones matching the basename.
+	# if multiple (like 'render-standalone', 'render-standalone2', grab the shortest one
+    relativePath=$(__aaal_all_repo_dirs | grep "${repo}" | awk '{ print length(), $0 | "sort -n" }' | head -n1 | sed "s/ /\t/g" | cut -f 2)
+    cd "${relativePath}"
 fi
 
