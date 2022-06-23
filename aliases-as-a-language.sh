@@ -14,7 +14,6 @@ alias v='__aaal_set_version '
 # Nouns
 #########################
 alias 1d='cd `e1d`'
-alias ed='cd `eed`'
 alias 1D='cd `e1D`'
 alias d1f='cd `ed1f`'
 alias f='1f'
@@ -38,7 +37,6 @@ alias b1b='b `1b`'								# branch one branch
 alias gcp='c $(p)'								# commit pasting (as message)
 
 alias 1d='find ~ -type d | fzf'				# echo dir from ~
-alias ed='find ~ -type d | fzf -e'			# echo dir from ~, exact
 alias e1D='sudo find / -type d | fzf'			# echo dir from /
 alias e1t='__aaal_t_fuzzy'						# echo file and row
 alias et='__aaal_t_exact'						# echo file and row, exact

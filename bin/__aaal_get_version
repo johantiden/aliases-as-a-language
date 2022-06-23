@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+version="$(__aaal_get_maven_version)"
+if [[ $? == 0 ]]; then
+  #echo "maven"
+  echo "${version}"
+  exit 0
+fi
+#echo "not maven"
+
+version=$(__aaal_get_packagejson_version)
+if [[ $? == 0 ]]; then
+  echo "package.json"
+  echo "${version}"
+  exit 0
+fi
+
+
+
+exit 1

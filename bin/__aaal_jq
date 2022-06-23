@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+jq -r "${1}" "${2}" 2> /dev/null \
+    | grep -v "^null$"

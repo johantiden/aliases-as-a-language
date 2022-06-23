@@ -122,8 +122,7 @@ alias em="__looklet_list_maven_repos | __looklet_xargs -n1 basename | OUTER_COMM
 
 alias en="__looklet_list_node_repos | __looklet_xargs -n1 basename | OUTER_COMMAND=\"\${BASH_COMMAND}\" __looklet_each_pipe"
 
-alias ed="__looklet_list_sub_directories | __looklet_xargs realpath | OUTER_COMMAND=\"\${BASH_COMMAND}\" __looklet_each_pipe"
-
+alias ed="__looklet_list_docker_repos | __looklet_xargs -n1 basename | OUTER_COMMAND=\"\${BASH_COMMAND}\" __looklet_each_pipe"
 
 # ==================================================
 # EACH > TAB COMPLETION

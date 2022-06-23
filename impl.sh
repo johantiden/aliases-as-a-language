@@ -32,12 +32,6 @@ function __aaal_t_fuzzy {
     fi
 }
 
-
-function __aaal_get_version {
-    # TODO: More than maven versions
-    __aaal_get_maven_version
-}
-
 function __aaal_second {
     __aaal_column 2
 }
