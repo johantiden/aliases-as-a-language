@@ -8,7 +8,6 @@ export PATH=$thisDirectory/generated:$PATH
 
 # Verbs
 #########################
-alias c='__aaal_git_commit '
 alias v='__aaal_set_version '
 
 # Nouns
@@ -26,7 +25,7 @@ alias et='eet'
 # Sentences
 #########################
 ### Branch
-alias bd='b develop'							# branch develop
+alias bd='b develop'			Q			# branch develop
 alias bm='b `__aaal_git_main_branch`'		# branch main/master
 
 
