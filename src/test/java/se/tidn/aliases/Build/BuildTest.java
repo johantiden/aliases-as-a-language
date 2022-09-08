@@ -1,12 +1,13 @@
 package se.tidn.aliases.Build;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class BuildTest {
 
@@ -18,7 +19,7 @@ public class BuildTest {
         Map<Sentence, Implementation> allSentences = Build.bake(Build.getAllSentencesRaw());
 
         for (Sentence sentence : sentences) {
-            assertTrue(sentence + " must be implemented in Build.getAllSentences", allSentences.keySet().stream().anyMatch(k -> k.command.equals(sentence.command)));
+            assertTrue(allSentences.keySet().stream().anyMatch(k -> k.command.equals(sentence.command)), sentence + " must be implemented in Build.getAllSentences");
         }
     }
 
